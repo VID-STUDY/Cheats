@@ -1,4 +1,6 @@
 <!doctype html>
+<!--[if lte IE 9]>         <html lang="en" class="lt-ie10 lt-ie10-msg no-focus"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-focus"> <!--<![endif]-->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,74 +9,89 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Meta tags -->
+    <meta name="description" content="{{ config('app.name', 'Laravel') }} Dashboard">
+    <meta name="author" content="Aiso">
+    <meta name="robots" content="noindex, nofollow">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicons/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/favicons/favicon-192x192.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/favicons/apple-touch-icon-180x180.png') }}">
+    <!-- END Icons -->
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Stylesheets -->
+    <!-- Codebase framework -->
+    @yield('css')
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/codebase.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themes/pulse.min.css') }}">
+
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+@php
+  $isHomePage = Route::current()->getName() == 'admin.index';
+@endphp
+<div id="page-container" class="sidebar-o side-scroll @if ($isHomePage) page-header-glass page-header-inverse @else page-header-modern @endif main-content-boxed">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+@include('layouts.partials.sidebar')
 
-                    </ul>
+@include('layouts.partials.header')
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+<!-- Main Container -->
+    <main id="main-container">
+        @if ($isHomePage)
+            <!-- Page Content -->
+            <div class="bg-image" style="background-image: url('{{ asset('assets/img/photos/photo2@2x.jpg') }}');">
+                <div class="hero bg-primary-dark-op">
+                    <div class="hero-inner">
+                        <div class="content content-full text-center">
+                            <h1 class="display-4 font-w700 text-white mb-10 invisible" data-toggle="appear" data-class="animated fadeInDown">{{ config('app.name') }}</h1>
+                            <h2 class="font-w400 text-white-op mb-50 invisible" data-toggle="appear" data-class="animated fadeInUp" data-timeout="250">Welcome to your Dashboard! Have a nice day!</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <!-- END Page Content -->
+        @else
+            <!-- Page Content -->
+                <div class="content">
+                    {{-- Content --}}
+                    @include('components.alerts')
+                    @yield('content')
+                </div>
+                <!-- END Page Content -->
+        @endif
+    </main>
+    <!-- END Main Container -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+    @include('layouts.partials.footer')
+</div>
+<!-- END Page Container -->
+
+<!-- Codebase Core JS -->
+<script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/codebase.min.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
+<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('plugins/ckfinder/ckfinder.js') }}"></script>
+<script>
+    jQuery(function () {
+        var userDropdown = function () {
+            let userDropDownButton = $('#page-header-user-dropdown');
+            userDropDownButton.on('click', function (e) {
+                e.preventDefault();
+                userDropDownButton.next().toggleClass('show');
+                userDropDownButton.parent().toggleClass('show');
+            })
+        };
+        userDropdown();
+    });
+</script>
+</div>
 </body>
 </html>
