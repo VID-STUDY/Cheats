@@ -18,9 +18,12 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
-    Auth::routes();
-    Route::middleware(['auth'])->group(function () {
-        Route::get('/', 'DashboardController@index');
+    Auth::routes(['register' => false,
+        'reset' => false,
+        'confirm' => false,
+        'verify' => false]);
+    Route::middleware(['auth.admin'])->group(function () {
+        Route::get('/', 'DashboardController@index')->name('index');
     });
 });
 
