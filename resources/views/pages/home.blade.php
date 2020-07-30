@@ -1,32 +1,109 @@
 @extends('app')
 
-@section('title', 'Приватные читы')
+@section('title', 'Главная')
 
 @section('header')
     @include('layouts.header')
 @endsection
 
+@section('css')
+<style>
+        .cheats {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735896911831236688/56f9bd147af0ac69.png); /* Путь к файлу с исходным рисунком  */
+
+        width: 240px; /* Ширина рисунка */
+        height: 400px; /*  Высота рисунка */
+
+
+        overflow:hidden;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        border-radius: 10px;
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+        transition: 0.3s;
+       }
+
+       .cheats:hover {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735896915270565951/7f7ba2d1d0ec8df2.png); /* Путь к файлу с заменяемым рисунком  */
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transition: 0.3s;
+       }
+
+        .macros {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735899323119960175/401f3cbe5b49fac5.png); /* Путь к файлу с исходным рисунком  */
+
+        width: 240px; /* Ширина рисунка */
+        height: 400px; /*  Высота рисунка */
+
+
+        overflow:hidden;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        border-radius: 10px;
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+
+        transition: 0.3s;
+
+       }
+
+       .macros:hover {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735899243465932880/5e73ab30d41c76ca.png); /* Путь к файлу с заменяемым рисунком  */
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transition: 0.3s;
+       }
+
+        .spoofer {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735916101149655121/9ad1d6ca679e87ec.png); /* Путь к файлу с исходным рисунком  */
+
+        width: 240px; /* Ширина рисунка */
+        height: 400px; /*  Высота рисунка */
+
+
+        overflow:hidden;
+        -moz-transition: all 1s ease-out;
+        -o-transition: all 1s ease-out;
+        -webkit-transition: all 1s ease-out;
+        border-radius: 10px;
+        box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+        transition: 0.3s;
+       }
+
+       .spoofer:hover {
+        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735916109445988362/5be9805927123ba0.png); /* Путь к файлу с заменяемым рисунком  */
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transition: 0.3s;
+       }
+</style>
+@endsection
+
 @section('content')
 <section id="cheats">
-  <div class="container row m-auto pt-5 pb-5 animated pulse">
-  <div class="col-md-3">
-    <a class="csgo-link hvr-grow" href="chiti_csgo/index.html"></a>
+  <div class="container row m-auto pl-5 pt-5 pb-5 animated pulse">
+    <div class="col pb-2">
+      <a href="{{ route('chiti') }}">
+        <div class="spoofer"></div>
+      </a>
     </div>
-    <div class="col-md-3">
-      <a class="pubg-link hvr-grow" href="chiti_pubg/index.html"></a>
+    <div class="col pb-2">
+      <a href="{{ route('games') }}">
+          <div class="cheats"></div>
+      </a>
     </div>
-    <div class="col-md-3">
-      <a class="rust-link hvr-grow" href="chiti_rust/index.html"></a>
+    <div class="col pb-2">
+      <a href="{{ route('macros') }}">
+          <div class="macros"></div>
+      </a>
     </div>
-    <div class="col-md-3">
-      <a class="warface-link hvr-grow" href="chiti_warface/index.html"></a>
-    </div>
-    <div class="col-md-12 col-sm-6 mt-5">
-      <a class="spoofer-link hvr-grow" href="chiti_apex/index.html"></a>
-    </div>
-    <div class="col-md-12 col-sm-6 mt-5">
-      <a class="r6s-link3 hvr-grow" href="chiti_r6s/index.html"></a>
-    </div>
+
+
   </div>
 </section>
 <section id="about">

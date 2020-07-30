@@ -37,6 +37,10 @@ Route::get('/contacts', function () {
     return view('pages.contacts');
 })->name('contacts');
 
+Route::get('/spoofer', function () {
+    return view('pages.spoofer');
+})->name('spoofer');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +56,11 @@ Route::get('/chiti', function () {
 Route::get('/chiti/podrobno', function () {
     return view('cheats.podrobno');
 })->name('podrobno');
+
+Route::get('/games', function () {
+    return view('cheats.games');
+})->name('games');
+
+Route::get('/macros', function () {
+    return view('cheats.macros');
+})->name('macros');

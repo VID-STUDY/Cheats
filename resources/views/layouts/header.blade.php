@@ -5,7 +5,7 @@
       <a class="text-muted hvr-push" href="https://discord.gg/zZawvB4" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
     </div>
     <div class="col-4 text-center logo-text">
-      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="index.html">WH-SATANO</a>
+      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="index.html">Spoofer inc.</a>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
     </div>
@@ -22,29 +22,41 @@
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('home') }}">Главная</a>
       </li>
-      <li class="nav-item dropdown pl-1 pr-1">
+      <!-- <li class="nav-item dropdown pl-1 pr-1">
         <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Приватные читы</a>
         <div class="dropdown-menu" aria-labelledby="dropdown08">
-          <a class="dropdown-item hvr-bounce-out" href="{{ route('chiti') }}">Читы CS:GO</a>
-          <!-- <a class="dropdown-item hvr-bounce-out" href="chiti_pubg/index.html">Читы PUBG</a>
+          <a class="dropdown-item hvr-bounce-out" href="{{ route('chiti') }}">C</a>
+          <a class="dropdown-item hvr-bounce-out" href="chiti_pubg/index.html">Читы PUBG</a>
           <a class="dropdown-item hvr-bounce-out" href="chiti_rust/index.html">Читы RUST</a>
           <a class="dropdown-item hvr-bounce-out" href="chiti_warface/index.html">Читы WarFace</a>
           <a class="dropdown-item hvr-bounce-out" href="chiti_apex/index.html">Читы Apex Legends</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_r6s/index.html">Читы R6S</a> -->
+          <a class="dropdown-item hvr-bounce-out" href="chiti_r6s/index.html">Читы R6S</a>
         </div>
+      </li> -->
+      <li class="nav-item pl-1 pr-1">
+        <a class="nav-link" href="{{ route('chiti') }}">Спуфер</a>
+      </li>
+      <li class="nav-item pl-1 pr-1">
+        <a class="nav-link" href="{{ route('games') }}">Читы</a>
+      </li>
+      <li class="nav-item pl-1 pr-1">
+        <a class="nav-link" href="{{ route('macros') }}">Макросы</a>
       </li>
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('guarantees') }}">Гарантия</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('blog') }}">Блог</a>
+        <a class="nav-link" href="{{ route('cooperation') }}">Отзывы</a>
       </li>
+      <!-- <li class="nav-item pl-1 pr-1">
+        <a class="nav-link" href="{{ route('blog') }}">Блог</a>
+      </li> -->
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('contacts') }}">Контакты</a>
       </li>
-      <li class="nav-item pl-1 pr-1">
+      <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('about') }}">О нас</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
