@@ -28,7 +28,7 @@
                     <div class="content-header-item">
                         <a class="link-effect font-w700" href="{{ route('admin.index') }}">
                             <i class="si si-fire text-primary"></i>
-                            <span class="font-size-xl text-dual-primary-dark">KMG</span><span class="font-size-xl text-primary"> Logistics</span>
+                            <span class="font-size-xl text-dual-primary-dark">Lar</span><span class="font-size-xl text-primary">avael</span>
                         </a>
                     </div>
                     <!-- END Logo -->
@@ -96,7 +96,7 @@
                     <li>
                         <a href="" @if (request()->is('admin/services*')) class="active"  @endif>
                             <i class="fa fa-cogs"></i>
-                            <span class="sidebar-mini-hide">Services</span>
+                            <span class="sidebar-mini-hide">Games</span>
                         </a>
                     </li>
                 </ul>

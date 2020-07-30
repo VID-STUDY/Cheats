@@ -45,7 +45,7 @@
                         <div class="px-30 py-10">
                             <a class="link-effect font-w700" href="#">
                                 <i class="si si-fire"></i>
-                                <span class="font-size-xl text-primary-dark">KMG</span><span class="font-size-xl"> Logistics</span>
+                                <span class="font-size-xl text-primary-dark">Lar</span><span class="font-size-xl">avel</span>
                             </a>
                             <h1 class="h3 font-w700 mt-30 mb-10">Welcome to {{ config('app.name', 'Laravel') }} Dashboard</h1>
                             <h2 class="h5 font-w400 text-muted mb-0">Please sign in</h2>
