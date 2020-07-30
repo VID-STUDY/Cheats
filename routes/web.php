@@ -24,6 +24,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         'verify' => false]);
     Route::middleware(['auth.admin'])->group(function () {
         Route::get('/', 'DashboardController@index')->name('index');
+        Route::resource('games', 'GameController');
     });
 });
 
