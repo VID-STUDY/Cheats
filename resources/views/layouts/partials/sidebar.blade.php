@@ -94,8 +94,8 @@
                         <span class="sidebar-mini-hidden">Content</span>
                     </li>
                     <li>
-                        <a href="" @if (request()->is('admin/services*')) class="active"  @endif>
-                            <i class="fa fa-cogs"></i>
+                        <a href="{{ route('admin.games.index') }}" @if (request()->is('admin/games*')) class="active" @endif>
+                            <i class="si si-game-controller"></i>
                             <span class="sidebar-mini-hide">Games</span>
                         </a>
                     </li>
