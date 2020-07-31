@@ -7,7 +7,92 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('css/games.css') }}">
+  <!-- <link rel="stylesheet" href="{{ asset('css/games.css') }}"> -->
+<style>
+
+    .all {
+         box-sizing: border-box;
+         display: block;
+    }
+
+    .cheats-r6 {
+    background: url('{{ asset("img/games/R6S_S.png") }}'); /* Путь к файлу с исходным рисунком  */
+    display: inline-block;
+    width: 240px; /* Ширина рисунка */
+    height: 400px; /*  Высота рисунка */
+    margin-bottom:65;
+    margin-right:35;
+    overflow:hidden;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    border-radius: 10px;
+
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    transition: 0.3s;
+
+   }
+
+   .cheats-r6:hover {
+    background: url('{{ asset("img/games/R6S_Shover.png") }}'); /* Путь к файлу с заменяемым рисунком  */
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: 0.3s;
+   }
+
+
+
+   .cheats-paladins {
+    background: url('{{ asset("img/games/paladins.png") }}'); /* Путь к файлу с исходным рисунком  */
+   display: inline-block; /*  Рисунок как блочный элемент */
+    width: 240px; /* Ширина рисунка */
+    height: 400px; /*  Высота рисунка */
+    margin-bottom:65;
+    margin-right:35;
+    overflow:hidden;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    border-radius: 10px;
+
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    transition: 0.3s;
+   }
+
+   .cheats-paladins:hover {
+    background: url('{{ asset("img/games/paladins-hover.png") }}'); /* Путь к файлу с заменяемым рисунком  */
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: 0.3s;
+   }
+
+   .cheats-cs-go {
+    background: url('{{ asset("img/games/CSGO_.png") }}'); /* Путь к файлу с исходным рисунком  */
+   display: inline-block; /*  Рисунок как блочный элемент */
+    width: 240px; /* Ширина рисунка */
+    height: 400px; /*  Высота рисунка */
+    margin-bottom:65;
+    margin-right:35;
+    overflow:hidden;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    border-radius: 10px;
+
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    transition: 0.3s;
+   }
+
+   .cheats-cs-go:hover {
+    background: url('{{ asset("img/games/csgo_hover.png") }}'); /* Путь к файлу с заменяемым рисунком  */
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: 0.3s;
+   }
+</style>
 @endsection
 
 @section('content')

@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse justify-content-md-center" id="menu">
     <ul class="navbar-nav satano-nav">
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('home') }}">Главная</a>
+        <a class="nav-link text-white" href="{{ route('home') }}">Главная</a>
       </li>
       <!-- <li class="nav-item dropdown pl-1 pr-1">
         <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Приватные читы</a>
@@ -34,25 +34,25 @@
         </div>
       </li> -->
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('chiti') }}">Спуфер</a>
+        <a class="nav-link text-white" href="{{ route('chiti') }}">Спуфер</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('games') }}">Читы</a>
+        <a class="nav-link text-white" href="{{ route('games') }}">Читы</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('macros') }}">Макросы</a>
+        <a class="nav-link text-white" href="{{ route('macros') }}">Макросы</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('guarantees') }}">Гарантия</a>
+        <a class="nav-link text-white" href="{{ route('guarantees') }}">Гарантия</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('cooperation') }}">Отзывы</a>
+        <a class="nav-link text-white" href="{{ route('cooperation') }}">Отзывы</a>
       </li>
       <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('blog') }}">Блог</a>
       </li> -->
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('contacts') }}">Контакты</a>
+        <a class="nav-link text-white" href="{{ route('contacts') }}">Контакты</a>
       </li>
       <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('about') }}">О нас</a>

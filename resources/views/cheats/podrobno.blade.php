@@ -6,8 +6,12 @@
     @include('layouts.header')
 @endsection
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/cheat-page-style.css') }}">
+@endsection
+
 @section('content')
-<main class="p-1 dragon-bg">
+<main class="p-1 dragon-bg" style="background:url('{{ asset('img/dragonhack-bg.webp') }}')"> 
   <div class="container text-center">
   <h1 class="dh-h1 mt-5">BlastHack</h1>
   <div class="text animated shake"></div>

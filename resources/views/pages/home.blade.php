@@ -9,7 +9,7 @@
 @section('css')
 <style>
         .cheats {
-        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735896911831236688/56f9bd147af0ac69.png); /* Путь к файлу с исходным рисунком  */
+        background: url('{{ asset("img/main_page_images/cheats.png") }}'); /* Путь к файлу с исходным рисунком  */
 
         width: 240px; /* Ширина рисунка */
         height: 400px; /*  Высота рисунка */
@@ -25,7 +25,7 @@
        }
 
        .cheats:hover {
-        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735896915270565951/7f7ba2d1d0ec8df2.png); /* Путь к файлу с заменяемым рисунком  */
+        background: url('{{ asset("img/main_page_images/cheats_hover.png") }}'); /* Путь к файлу с заменяемым рисунком  */
         -webkit-transform: scale(1.1);
         -moz-transform: scale(1.1);
         -o-transform: scale(1.1);
@@ -59,7 +59,7 @@
        }
 
         .spoofer {
-        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735916101149655121/9ad1d6ca679e87ec.png); /* Путь к файлу с исходным рисунком  */
+        background: url('{{ asset("img/main_page_images/spoofer.png") }}'); /* Путь к файлу с исходным рисунком  */
 
         width: 240px; /* Ширина рисунка */
         height: 400px; /*  Высота рисунка */
@@ -75,7 +75,7 @@
        }
 
        .spoofer:hover {
-        background: url(https://cdn.discordapp.com/attachments/731175555059286058/735916109445988362/5be9805927123ba0.png); /* Путь к файлу с заменяемым рисунком  */
+        background: url('{{ asset("img/main_page_images/spoofer_hover.png") }}');  /* Путь к файлу с заменяемым рисунком  */
         -webkit-transform: scale(1.1);
         -moz-transform: scale(1.1);
         -o-transform: scale(1.1);
@@ -86,8 +86,8 @@
 
 @section('content')
 <section id="cheats">
-  <div class="container row m-auto pl-5 pt-5 pb-5 animated pulse">
-    <div class="col pb-2">
+  <div class="container row m-auto pl-5 pt-5 pb-5">
+    <div class="col pb-2 d-flex justify-content-end">
       <a href="{{ route('chiti') }}">
         <div class="spoofer"></div>
       </a>
@@ -97,11 +97,11 @@
           <div class="cheats"></div>
       </a>
     </div>
-    <div class="col pb-2">
+    <!-- <div class="col pb-2">
       <a href="{{ route('macros') }}">
           <div class="macros"></div>
       </a>
-    </div>
+    </div> -->
 
 
   </div>
@@ -135,7 +135,7 @@
     </div>
   </div>
 </section>
-<section id="reviews" class="mt-5 mb-5 p-4">
+<!-- <section id="reviews" class="mt-5 mb-5 p-4">
   <div class="header-h3 text-center text-muted text-uppercase mb-1">
     <h3>Отзывы</h3>
   </div>
@@ -186,8 +186,8 @@
   <a class="carousel-control-next" href="index.html#reviewsBlock" role="button" data-slide="next"><i class="fas fa-angle-right"></i></a>
   </div>
   <div class="show-all-reviews hvr-bounce-in"><a href="https://vk.com/topic-103745867_33518311" target="_blank">Посмотреть все отзывы</a></div>
-</section>
-<section id="blog" class="mt-5 mb-5 p-4">
+</section> -->
+<!-- <section id="blog" class="mt-5 mb-5 p-4">
   <div class="header-h3 text-center text-muted text-uppercase mb-1">
     <h3>Блог</h3>
   </div>
@@ -224,5 +224,5 @@
 
     </div>
   </div>
-</section>
+</section> -->
 @endsection

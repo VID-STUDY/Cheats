@@ -4,9 +4,9 @@
       <div class="col-md-4">
         <h5>Навигация</h5>
         <ul class="list-group text-muted pl-4 pr-4">
-          <li><a href="index.html" class="hvr-icon-pulse" title="Главная страница"><i class="fas fa-home hvr-icon mr-3"></i>Главная</a></li>
-          <li><a href="sitemap.xml" class="hvr-icon-pulse" title="Карта сайта"><i class="fas fa-sitemap hvr-icon mr-3"></i>Карта сайта</a></li>
-          <li><a href="blog.html" class="hvr-icon-pulse" title="Блог"><i class="far fa-newspaper mr-3"></i>Игровой блог</a></li>
+          <li><a href="{{ route('home') }}" class="hvr-icon-pulse" title="Главная страница"><i class="fas fa-home hvr-icon mr-3"></i>Главная</a></li>
+          <!-- <li><a href="sitemap.xml" class="hvr-icon-pulse" title="Карта сайта"><i class="fas fa-sitemap hvr-icon mr-3"></i>Карта сайта</a></li>
+          <li><a href="blog.html" class="hvr-icon-pulse" title="Блог"><i class="far fa-newspaper mr-3"></i>Игровой блог</a></li> -->
         </ul>
       </div>
       <div class="col-md-4">
@@ -14,7 +14,7 @@
           <ul class="list-group text-muted pl-4 pr-4">
           <li><a href="https://www.youtube.com/channel/UCTuK88GGBeNJKT5SMobAuzA" target="_blank" class="hvr-icon-pulse" title=""><i class="fab fa-youtube mr-2"></i>YouTube</a></li>
           <li><a href="https://vk.com/app5701477_197893311" target="_blank" class="hvr-icon-pulse" title=""><i class="fas fa-file-signature mr-2"></i>Тест на звание</a></li>
-          <li><a href="cooperation.html" class="hvr-icon-pulse" title="Сотрудничество"><i class="far fa-handshake mr-2"></i>Сотрудничество</a></li>
+          <li><a href="{{ route('cooperation') }}" class="hvr-icon-pulse" title="Сотрудничество"><i class="far fa-handshake mr-2"></i>Сотрудничество</a></li>
           <li><a href="https://www.elitepvpers.com/" class="hvr-icon-pulse" title="Elitepvpers"><i class="far fa-handshake mr-2"></i>Elitepvpers</a></li>
         </ul>
       </div>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="col-md-12 text-muted text-center mt-5">
-    <p>Copyright © WH-SATANO, 2015-2020</p>
+    <p>Copyright © Spoofer inc., 2015-2020</p>
     </div>
   </div>
 </footer>

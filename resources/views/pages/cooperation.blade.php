@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Приватные читы')
+@section('title', 'Сотрудничество')
 
 @section('header')
     @include('layouts.header')
@@ -12,7 +12,7 @@
     <div class="text-center text-theme">
       <i class="far fa-handshake fa-10x"></i>
     </div>
-    <h1 class="text-center mt-2 mb-2">Сотрудничество с проектом <b>WH-SATANO</b></h1>
+    <h1 class="text-center mt-2 mb-2">Сотрудничество с проектом <b>Spoofer inc.</b></h1>
     <p class="text-muted">Готов сотрудничать с проектом? Мы всегда ждём умных и активных молодых людей, которые будут заинтересованы в развитии проекта.</p>
     <hr />
     <p class="text-muted">Ниже представлен список вакансий свободных на текущий момент (
