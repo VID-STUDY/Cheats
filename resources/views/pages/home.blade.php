@@ -2,10 +2,6 @@
 
 @section('title', 'Главная')
 
-@section('header')
-    @include('layouts.header')
-@endsection
-
 @section('css')
 <style>
         .cheats {

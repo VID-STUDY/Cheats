@@ -31,7 +31,7 @@
   </head>
   <body>
 
-    @yield('header')
+    @include('layouts.header')
 
 
     <div class="img-load" hidden></div>
