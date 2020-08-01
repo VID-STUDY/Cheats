@@ -16,11 +16,12 @@ class CreateCheatsTable extends Migration
         Schema::create('cheats', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type');
             $table->string('image')->nullable();
             $table->float('price')->nullable();
             $table->integer('sort_order')->default(1);
 
-            $table->integer('game_id')->unsigned();
+            $table->integer('game_id')->nullable();
             $table->foreign('game_id')
                   ->references('id')->on('games')
                   ->onDelete('cascade');

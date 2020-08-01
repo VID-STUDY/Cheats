@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cheat extends Model
 {
     protected $fillable = [
-        'name', 'price', 'game_id', 'sort_order'
+        'name', 'price', 'game_id', 'sort_order', 'type'
     ];
 
     public function game()
