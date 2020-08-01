@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.home');
+})->name('home');
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Auth::routes(['register' => false,
@@ -29,3 +29,52 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/about', function () {
+    return view('pages.about');
+})->name('about');
+
+Route::get('/blog', function () {
+    return view('pages.blog');
+})->name('blog');
+
+Route::get('/guarantees', function () {
+    return view('pages.guarantees');
+})->name('guarantees');
+
+Route::get('/cooperation', function () {
+    return view('pages.cooperation');
+})->name('cooperation');
+
+Route::get('/contacts', function () {
+    return view('pages.contacts');
+})->name('contacts');
+
+Route::get('/spoofer', function () {
+    return view('pages.spoofer');
+})->name('spoofer');
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|Это мы в телеграмме обсуждали. Те две страницы и шаблонизатор для них. Там скорее всего нужен слаг, но я правильно точно не сделаю)
+| Поэтому пока вот так)
+*/
+Route::get('/chiti', function () {
+    return view('cheats.chiti');
+})->name('chiti');
+
+Route::get('/chiti/podrobno', function () {
+    return view('cheats.podrobno');
+})->name('podrobno');
+
+Route::get('/games', function () {
+    return view('cheats.games');
+})->name('games');
+
+Route::get('/macros', function () {
+    return view('cheats.macros');
+})->name('macros');

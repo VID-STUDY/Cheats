@@ -1,0 +1,20 @@
+.blog-onepost {
+    background: #f1f1f1;
+    padding: 20px 30px 5px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.blog-onepost img {
+    display: none;
+
+}
+
+.blog-onepost h3 {
+    background: #d85e5e;
+    color: white;
+    padding: 5px 40px 5px 15px;
+    display: inline-block;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
