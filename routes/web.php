@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
-
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Auth::routes(['register' => false,
         'reset' => false,
@@ -28,28 +24,15 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     });
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/about', 'HomeController@about')->name('about');
 
-Route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
+Route::get('/guarantees', 'HomeController@guarantees')->name('guarantees');
 
-Route::get('/blog', function () {
-    return view('pages.blog');
-})->name('blog');
+Route::get('/cooperation', 'HomeController@cooperation')->name('cooperation');
 
-Route::get('/guarantees', function () {
-    return view('pages.guarantees');
-})->name('guarantees');
-
-Route::get('/cooperation', function () {
-    return view('pages.cooperation');
-})->name('cooperation');
-
-Route::get('/contacts', function () {
-    return view('pages.contacts');
-})->name('contacts');
+Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
 Route::get('/spoofer', function () {
     return view('pages.spoofer');
