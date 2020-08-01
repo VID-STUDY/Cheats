@@ -45,9 +45,9 @@
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('guarantees') }}">Гарантия</a>
       </li>
-      <li class="nav-item pl-1 pr-1">
+      <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('cooperation') }}">Отзывы</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('blog') }}">Блог</a>
       </li> -->
