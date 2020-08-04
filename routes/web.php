@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-})->name('home');
+})->name('home1');
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Auth::routes(['register' => false,
@@ -55,7 +55,11 @@ Route::get('/spoofer', function () {
     return view('pages.spoofer');
 })->name('spoofer');
 
+Route::get('/user/settings', function () {
+    return view('pages.settings');
+})->name('settings');
 
+Route::post('/settings', 'SettingsController@update')->name('settings_post');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,3 +82,11 @@ Route::get('/games', function () {
 Route::get('/macros', function () {
     return view('cheats.macros');
 })->name('macros');
+
+Route::get('/user', function () {
+    return view('pages.kabinet');
+})->name('kabinet');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

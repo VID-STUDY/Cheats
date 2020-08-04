@@ -41,7 +41,7 @@
 
     @include('layouts.footer')
 
-    <script type="a696848f29c030b8171175e2-text/javascript">
+    <!-- <script type="a696848f29c030b8171175e2-text/javascript">
         var ww = window.screen.width; // ширина
         var hh = window.screen.height; // высота
         if(ww < 500 && hh < 900) {
@@ -50,19 +50,19 @@
             console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
             document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
         }
-    </script>
-    <script type="a696848f29c030b8171175e2-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-    <div id="vk-vk">
+    </script> -->
+    <!-- <script type="a696848f29c030b8171175e2-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script> -->
+    <!-- <div id="vk-vk">
     <div id="vk_community_messages"></div>
-    </div>
-    <script type="a696848f29c030b8171175e2-text/javascript">
+    </div> -->
+    <!-- <script type="a696848f29c030b8171175e2-text/javascript">
                 VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
                     expandTimeout: "5000",
                     disableExpandChatSound: "1",
                     tooltipButtonText: "Есть вопрос?"
                 });
 
-            </script>
+            </script> -->
     <style>
                 @media (max-width: 900px) {
                     #vk-vk {
