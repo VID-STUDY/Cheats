@@ -5,7 +5,7 @@
       <a class="text-muted hvr-push" href="https://discord.gg/zZawvB4" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
     </div>
     <div class="col-4 text-center logo-text">
-      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="{{ route('home1') }}">DragonBreath</a>
+      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="{{ route('home') }}">DragonBreath</a>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
     </div>
@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse justify-content-md-center" id="menu">
     <ul class="navbar-nav satano-nav">
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('home1') }}">Главная</a>
+        <a class="nav-link text-white" href="{{ route('home') }}">Главная</a>
       </li>
       <!-- <li class="nav-item dropdown pl-1 pr-1">
         <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Приватные читы</a>
@@ -47,9 +47,6 @@
       </li>
       <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('cooperation') }}">Отзывы</a>
-      </li> -->
-      <!-- <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('blog') }}">Блог</a>
       </li> -->
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('contacts') }}">Контакты</a>
