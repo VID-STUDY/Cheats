@@ -5,7 +5,7 @@
       <a class="text-muted hvr-push" href="https://discord.gg/zZawvB4" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
     </div>
     <div class="col-4 text-center logo-text">
-      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="index.html">Spoofer inc.</a>
+      <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="{{ route('home1') }}">DragonBreath</a>
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
     </div>
@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse justify-content-md-center" id="menu">
     <ul class="navbar-nav satano-nav">
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('home') }}">Главная</a>
+        <a class="nav-link text-white" href="{{ route('home1') }}">Главная</a>
       </li>
       <!-- <li class="nav-item dropdown pl-1 pr-1">
         <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Приватные читы</a>
@@ -39,9 +39,9 @@
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('games') }}">Читы</a>
       </li>
-      <li class="nav-item pl-1 pr-1">
+      <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('macros') }}">Макросы</a>
-      </li>
+      </li> -->
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('guarantees') }}">Гарантия</a>
       </li>
@@ -54,6 +54,15 @@
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('contacts') }}">Контакты</a>
       </li>
+      @if(Auth::check())
+      <li class="nav-item pl-1 pr-1">
+        <a class="nav-link text-white" href="{{ route('kabinet') }}">Личный кабинет</a>
+      </li>
+      @else
+        <li class="nav-item pl-1 pr-1">
+          <a class="nav-link text-white" href="{{ route('login') }}">Авторизация</a>
+        </li>
+      @endif
       <!-- <li class="nav-item pl-1 pr-1">
         <a class="nav-link" href="{{ route('about') }}">О нас</a>
       </li> -->
