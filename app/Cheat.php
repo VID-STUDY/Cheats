@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cheat extends Model
+class   Cheat extends Model
 {
     protected $fillable = [
-        'name', 'type', 'release_date', 'manufacturer', 'sort_order', 'game_id'
+        'name', 'type', 'description', 'release_date', 'manufacturer', 'sort_order', 'game_id'
     ];
 
     /**
@@ -37,6 +37,6 @@ class Cheat extends Model
      */
     public function durations()
     {
-        return $this->hasMany(SubscribtionDuration::class);
+        return $this->hasMany(SubscriptionDuration::class);
     }
 }
