@@ -86,17 +86,21 @@
                     <li>
                         <a href="/" target="_blank">
                             <i class="si si-map"></i>
-                            <span class="sidebar-mini-hide">Go to the website</span>
+                            <span class="sidebar-mini-hide">На сайт</span>
                         </a>
                     </li>
                     <li class="nav-main-heading">
-                        <span class="sidebar-mini-visible">C</span>
-                        <span class="sidebar-mini-hidden">Content</span>
+                        <span class="sidebar-mini-visible">К</span>
+                        <span class="sidebar-mini-hidden">Контент</span>
                     </li>
                     <li>
                         <a href="{{ route('admin.games.index') }}" @if (request()->is('admin/games*')) class="active" @endif>
                             <i class="si si-game-controller"></i>
-                            <span class="sidebar-mini-hide">Games</span>
+                            <span class="sidebar-mini-hide">Игры</span>
+                        </a>
+                        <a href="{{ route('admin.cheats.index') }}" @if (request()->is('admin/cheats*')) class="active" @endif>
+                            <i class="fa fa-cogs"></i>
+                            <span class="sidebar-mini-hide">Читы</span>
                         </a>
                     </li>
                 </ul>
