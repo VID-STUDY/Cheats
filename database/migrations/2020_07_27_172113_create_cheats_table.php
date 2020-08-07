@@ -17,8 +17,10 @@ class CreateCheatsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
+            $table->string('file')->nullable();
             $table->string('image')->nullable();
-            $table->float('price')->nullable();
+            $table->date('release_date')->nullable();
+            $table->string('manufacturer')->nullable();
             $table->integer('sort_order')->default(1);
 
             $table->integer('game_id')->nullable();

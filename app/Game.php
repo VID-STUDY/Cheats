@@ -10,6 +10,11 @@ class Game extends Model
         'name', 'description', 'sort_order', 'short_description'
     ];
 
+    /**
+     * Game's cheats
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function cheats()
     {
         return $this->hasMany(Cheat::class);
