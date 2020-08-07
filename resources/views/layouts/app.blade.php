@@ -76,9 +76,6 @@
 <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/js/codebase.min.js') }}"></script>
-<script src="{{ asset('js/admin.js') }}"></script>
-<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('plugins/ckfinder/ckfinder.js') }}"></script>
 <script>
     jQuery(function () {
         var userDropdown = function () {
@@ -93,5 +90,6 @@
     });
 </script>
 </div>
+@yield('js')
 </body>
 </html>
