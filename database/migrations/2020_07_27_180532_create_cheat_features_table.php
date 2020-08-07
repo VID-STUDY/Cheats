@@ -18,7 +18,7 @@ class CreateCheatFeaturesTable extends Migration
             $table->string('name');
             $table->string('icon')->nullable();
             $table->integer('sort_order')->default(1);
-            $table->integer('cheat_id')->unsigned();
+            $table->unsignedBigInteger('cheat_id');
 
             $table->foreign('cheat_id')
                   ->references('id')->on('cheats')

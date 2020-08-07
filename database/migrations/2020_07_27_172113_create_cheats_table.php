@@ -23,10 +23,10 @@ class CreateCheatsTable extends Migration
             $table->string('manufacturer')->nullable();
             $table->integer('sort_order')->default(1);
 
-            $table->integer('game_id')->nullable();
+            $table->unsignedBigInteger('game_id')->nullable();
             $table->foreign('game_id')
                   ->references('id')->on('games')
-                  ->onDelete('cascade');
+                  ->onDelete('set null');
             $table->timestamps();
         });
     }
