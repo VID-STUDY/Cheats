@@ -1,3 +1,33 @@
+<!-- <script type="b1ea62bcaea4d15c382a1a91-text/javascript">
+    var ww = window.screen.width; // ширина
+    var hh = window.screen.height; // высота
+    if(ww < 500 && hh < 900) {
+        console.log("Mobile");
+    } else {
+        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
+        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
+    }
+</script>
+<script type="b1ea62bcaea4d15c382a1a91-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
+<div id="vk-vk">
+<div id="vk_community_messages"></div>
+</div>
+<script type="b1ea62bcaea4d15c382a1a91-text/javascript">
+    VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
+        expandTimeout: "5000",
+        disableExpandChatSound: "1",
+        tooltipButtonText: "Есть вопрос?"
+    });
+
+</script>
+<style>
+      @media (max-width: 900px) {
+          #vk-vk {
+              display: none!important;
+          }
+      }
+
+</style> -->
 <footer class="pb-1 pt-4">
   <div class="container">
     <div class="row">
@@ -28,7 +58,7 @@
       </div>
     </div>
     <div class="col-md-12 text-muted text-center mt-5">
-    <p>Copyright © Spoofer inc., 2015-2020</p>
+    <p>Copyright © DragonBreath inc., 2015-2020</p>
     </div>
   </div>
 </footer>

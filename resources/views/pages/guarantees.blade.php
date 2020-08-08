@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Гарантии')
+@section('title', 'О нас')
 
 @section('header')
     @include('layouts.header')
@@ -9,16 +9,22 @@
 @section('content')
 <section id="guarantees">
   <div class="container pt-5 b-5 mt-2 mb-2">
-    <h1 class="text-center mt-4 mb-4">Гарантии</h1>
-    <p><b>Spoofer inc.</b> - популярная огранизация, разрабатывающая приватный софт для CS:GO, PUBG, RUST и Apex Legends которая заслужила свой высокий авторитет среди многих геймеров. Многочисленные отзывы, качественное исполнение своей работы, широкий ассортимент товаров дают Вам 100%-ую гарантию того, что любой продукт от нашей организации оставит для Вас лишь положительные эмоции.</p>
+    <h1 class="text-center mt-4 mb-4">О нас</h1>
+    <p>
+      <font color="#D85E53">DragonBreath</font> -  небольшой коллектив с наполеоновскими амбициями и стремлением к совершенствованию производимых нами товаров и услуг. В их число входят: фирменный спуфер, читы (скоро) на Apex: Legends, RaibowSixSiege, CS:GO, PUBG, Paladins. Также ведётся активная разработка макросов.
+    <br>  Мы на рынке относительно недавно и поэтому остро нуждаемся в вашей поддержке, отзывах и критике. Тем не менее, разработчики Dragon’s уже имеют довольно значительный опыт в работе с клиентами на площадке Funpay.
+      Примечание: если вы обнаружили какую бы то ни было помеху в работе сайта или предоставляемых нами услуг, просьба сообщить в техподдержку или в онлайн чат.
+      Спасибо за то, что выбрали нас.
+
+    </p>
     <ul class="guarantees_block">
       <li>
         <i class="fas fa-check fa-2x mr-2 green-text"></i>
-        <span>Мы более 4-х лет на рынке</span>
+        <span>Приемлемые цены.</span>
       </li>
       <li class="mt-4">
         <i class="far fa-thumbs-up fa-2x mr-2 green-text"></i>
-        <span>Наш проект имеет более 6000 отзывов</span>
+        <span>Гарантия безопасности.</span>
       </li>
       <li class="mt-4">
         <i class="fab fa-expeditedssl fa-2x mr-2 green-text"></i>
@@ -26,11 +32,11 @@
       </li>
       <li class="mt-4">
         <i class="far fa-handshake fa-2x mr-2 green-text"></i>
-        <span>Мы выдаём свой софт для тестирования бесплатно</span>
+        <span>Активная техподдержка</span>
       </li>
       <li class="mt-4">
         <i class="far fa-grin fa-2x mr-2 green-text"></i>
-        <span>Наш проект имеет более 30000 довольных клиентов</span>
+        <span>Скидки постоянным клиентам </span>
       </li>
       <li class="mt-4 mb-5">
         <i class="fas fa-headset fa-2x mr-2 green-text"></i>
@@ -40,37 +46,6 @@
   </div>
 </section>
 
-
-<script type="f8052d2264a1d6a7e2e12f06-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-<script type="f8052d2264a1d6a7e2e12f06-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-<div id="vk-vk">
-<div id="vk_community_messages"></div>
-</div>
-<script type="f8052d2264a1d6a7e2e12f06-text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
-                expandTimeout: "5000",
-                disableExpandChatSound: "1",
-                tooltipButtonText: "Есть вопрос?"
-            });
-
-        </script>
-<style>
-            @media (max-width: 900px) {
-                #vk-vk {
-                    display: none!important;
-                }
-            }
-
-        </style>
 
 <script type="f8052d2264a1d6a7e2e12f06-text/javascript">
     (function(d, w, c) {
