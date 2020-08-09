@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
-class   Cheat extends Model
+class Cheat extends Model
 {
+    use HasSlug;
+
     protected $fillable = [
         'name', 'type', 'description', 'release_date', 'manufacturer', 'sort_order', 'game_id'
     ];
@@ -38,5 +42,12 @@ class   Cheat extends Model
     public function durations()
     {
         return $this->hasMany(SubscriptionDuration::class);
+    }
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('slug');
     }
 }
