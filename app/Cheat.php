@@ -50,4 +50,9 @@ class Cheat extends Model
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -4,7 +4,7 @@
 
 @section('content')
     <h2 class="content-heading">Читы</h2>
-    <form action="{{ route('admin.cheats.update', $cheat->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.cheats.update', $cheat->slug) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="block">

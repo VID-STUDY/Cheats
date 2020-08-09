@@ -4,7 +4,7 @@
 
 @section('content')
     <h2 class="content-heading">Игры</h2>
-    <form action="{{ route('admin.games.update', $game->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.games.update', $game->slug) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="block">
