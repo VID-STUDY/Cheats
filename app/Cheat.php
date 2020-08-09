@@ -11,7 +11,9 @@ class Cheat extends Model
     use HasSlug;
 
     protected $fillable = [
-        'name', 'type', 'description', 'release_date', 'manufacturer', 'sort_order', 'game_id'
+        'name', 'type', 'description', 'release_date', 'manufacturer',
+        'functional', 'system_requirements', 'additional_info',
+        'sort_order', 'game_id'
     ];
 
     /**
