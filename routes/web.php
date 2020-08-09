@@ -34,6 +34,9 @@ Route::get('/cooperation', 'HomeController@cooperation')->name('cooperation');
 
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
+// Cheats routes
+Route::get('/spoofers', 'CheatsController@spoofers')->name('cheats.spoofers');
+
 Route::get('/spoofer', function () {
     return view('pages.spoofer');
 })->name('spoofer');

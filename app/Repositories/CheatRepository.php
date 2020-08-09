@@ -87,4 +87,9 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
 
         $cheat->delete();
     }
+
+    public function spoofers(): Collection
+    {
+        return Cheat::where('type', 'spoofer')->orderBy('sort_order')->get();
+    }
 }

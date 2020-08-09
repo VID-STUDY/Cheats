@@ -12,6 +12,8 @@ interface CheatRepositoryInterface
 {
     public function all(): Collection;
 
+    public function spoofers(): Collection;
+
     public function create(Request $request): Cheat;
 
     public function get(int $id): Cheat;

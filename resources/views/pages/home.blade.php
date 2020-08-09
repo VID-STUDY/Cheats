@@ -84,7 +84,7 @@
 <section id="cheats">
   <div class="container row m-auto pl-5 pt-5 pb-5">
     <div class="col pb-2 d-flex justify-content-end">
-      <a href="{{ route('chiti') }}">
+      <a href="{{ route('cheats.spoofers') }}">
         <div class="spoofer"></div>
       </a>
     </div>
