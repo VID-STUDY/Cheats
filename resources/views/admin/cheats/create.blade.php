@@ -82,13 +82,23 @@
                         <div class="form-group @error('image') is-invalid @enderror">
                             <div class="form-material">
                                 <input type="file" name="image" id="image" class="form-control" accept="image/png, image/jpeg">
-                                <label for="image">Изображение</label>
+                                <label for="image">Главное изображение</label>
                             </div>
                             @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material">
+                                <input type="file" name="images[]" multiple id="images" class="form-control" accept="image/png, image/jpeg">
+                                <label for="images">Скрины из игры</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('file') is-invalid @enderror">
                             <div class="form-material">
@@ -99,6 +109,34 @@
                             @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="system_requirements" id="system_requirements" cols="30" rows="8"
+                                          class="form-control"></textarea>
+                                <label for="system_requirements">Системные требования</label>
+                                <div class="form-text text-muted text-right">Перечислите системные требования через точку с запятой</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="functionality" id="functionality" cols="30" rows="8" class="form-control"></textarea>
+                                <label for="functionality">Функционал</label></div>
+                                <div class="form-text text-muted text-right">Перечислите основные элементы через точку с запятой</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="additional_info" id="additional_info" cols="30" rows="8" class="form-control"></textarea>
+                                <label for="additional_info">Дополнительная информация</label></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -94,6 +94,23 @@
                         @endif
                     </div>
                     <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material">
+                                <input type="file" name="images[]" multiple id="images" class="form-control" accept="image/png, image/jpeg">
+                                <label for="images">Скрины из игры</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @foreach($cheat->images as $image)
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <img src="{{ asset('storage/' . $image->image) }}" alt="" class="img-thumbnail">
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('file') is-invalid @enderror">
                             <div class="form-material">
                                 <input type="file" name="file" id="file" class="form-control" accept=".zip, .rar">
@@ -107,6 +124,34 @@
                         @if ($cheat->file)
                             <a href="{{ asset('storage/'.$cheat->file) }}" class="btn btn-alt-primary"><i class="fa fa-download"></i> Скачать</a>
                         @endif
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="system_requirements" id="system_requirements" cols="30" rows="8"
+                                          class="form-control">{{ $cheat->system_requirements }}</textarea>
+                                <label for="system_requirements">Системные требования</label>
+                                <div class="form-text text-muted text-right">Перечислите системные требования через точку с запятой</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="functional" id="functional" cols="30" rows="8" class="form-control">{{ $cheat->functional }}</textarea>
+                                <label for="functional">Функционал</label></div>
+                            <div class="form-text text-muted text-right">Перечислите основные элементы через точку с запятой</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <div class="form-material floating">
+                                <textarea name="additional_info" id="additional_info" cols="30" rows="8" class="form-control">{{ $cheat->additional_info }}</textarea>
+                                <label for="additional_info">Дополнительная информация</label></div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="row">

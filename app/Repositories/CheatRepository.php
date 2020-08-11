@@ -38,6 +38,13 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
             $cheat->file = $filename;
             $cheat->save();
         }
+        $images = $request->file('images');
+        foreach ($images as $image) {
+            $extension = $image->getClientOriginalExtension();
+            $filename = 'images/' . $image->getClientOriginalName() . Str::random(10) . '.' . $extension;
+            Storage::disk('public')->put($filename, File::get($image));
+            $cheat->images()->create(['image' => $filename]);
+        }
         $features = $request->get('features', []);
         $cheat->features()->createMany(array_values($features));
         $durations = $request->get('durations');
@@ -70,6 +77,18 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
             Storage::disk('public')->put($filename, File::get($file));
             $cheat->file = $filename;
             $cheat->save();
+        }
+        $images = $request->file('images');
+        if ($images) {
+            foreach ($cheat->images as $image)
+                Storage::disk('public')->delete($image->image);
+            $cheat->images()->delete();
+            foreach ($images as $image) {
+                $extension = $image->getClientOriginalExtension();
+                $filename = 'images/' . $image->getClientOriginalName() . Str::random(10) . '.' . $extension;
+                Storage::disk('public')->put($filename, File::get($image));
+                $cheat->images()->create(['image' => $filename]);
+            }
         }
         $features = $request->get('features', []);
         $cheat->features()->delete();
