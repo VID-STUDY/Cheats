@@ -47,7 +47,7 @@
                                 <b class="mr-2">Разработчик:</b>{{ $cheat->manufacturer }}<br />
                             @endif
                         </p>
-                        <a type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-lg btn-buy-cheat">Купить</a>
+                        <a type="button" data-toggle="modal" data-target="#buyModal" class="btn btn-lg btn-buy-cheat">Купить</a>
                     </div>
                 </div>
             </div>
@@ -106,20 +106,35 @@
             </nav>
         </div>
     </main>
-
-    <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-    <script type="7c970f9dee8bf3fd5daaf159-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-    <div id="vk-vk">
-        <div id="vk_community_messages"></div>
+    <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+        <div class="d-flex h-100">
+            <div class="modal-dialog m-auto">
+                <div class="modal-content p-2">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="buyModalLabel">Оформить покупку {{ $cheat->name }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="{{ route('cheats.buy', $cheat->slug) }}">
+                        @csrf
+                        <div class="modal-body">
+                            <label for="customRange2" class="text-center d-block">Проведите ползунок влево или вправо и выберите нужный тариф</label>
+                            <input type="range" name="subscription" id="customRange2" class="custom-range" min="1" max="{{ $cheat->durations()->count() }}" value="1">
+                            <div class="ranges-dragon mb-5">
+                                @foreach($cheat->durations as $duration)
+                                    <span>{{ $duration->getPeriod() }} ({{ number_format($duration->price, 0, '.', ' ') }} руб.)</span>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал</button>
+                            <button type="submit" class="btn btn-primary">Перейти к оплате</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <style>
         @media (max-width: 900px) {
@@ -130,42 +145,9 @@
 
     </style>
 
-    <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
-    (function(d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter39582760 = new Ya.Metrika2({
-                    id: 39582760,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
-                });
-            } catch (e) {}
-        });
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function() {
-                n.parentNode.insertBefore(s, n);
-            };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks2");
-
-</script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/39582760" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
-    <script src="../js/jquery-3.3.1.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
-    <script src="../js/bootstrap.bundle.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
+    <script src="/js/jquery-3.3.1.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
+    <script src="/js/bootstrap.bundle.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         'use strict';
@@ -260,7 +242,7 @@
         // Пример текста
         // ——————————————————————————————————————————————————
 
-        var phrases = ['Низкая цена', 'Надёжная защита', 'Бесплатный тест', 'Удобное меню'];
+        var phrases = ['Низкая цена', 'Надёжная защита', 'Удобное меню'];
 
         var el = document.querySelector('.text');
         var fx = new TextScramble(el);

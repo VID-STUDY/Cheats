@@ -6,6 +6,8 @@ use App\Cheat;
 use App\Game;
 use App\Repositories\Interfaces\CheatRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class CheatsController extends Controller
 {
@@ -82,5 +84,27 @@ class CheatsController extends Controller
     public function cheat(Game $game, Cheat $cheat)
     {
         return view('cheats.show', compact('cheat', 'game'));
+    }
+
+    public function buy(Request $request, Cheat $cheat)
+    {
+        $durationIndex = intval($request->get('subscription')) - 1;
+        $duration = $cheat->durations[$durationIndex];
+        $user = auth()->user();
+        $key = bin2hex(random_bytes(32));
+        $fileToken = bin2hex(random_bytes(5));
+        $filenameWithToken = $cheat->name . $fileToken . '.zip';
+        Storage::disk('public')->copy($cheat->file, $filenameWithToken);
+        $zipPath = Storage::disk('public')->getAdapter()->applyPathPrefix($filenameWithToken);
+        $zip = new \ZipArchive();
+        $zip->open($zipPath);
+        $zip->addFromString('key.txt', $key);
+        $zip->close();
+        $user->subscriptions()->create([
+            'serialnum' => $key,
+            'serialtime' => $duration->duration,
+            'cheat_id' => $cheat->id
+        ]);
+        return response()->download($zipPath);
     }
 }

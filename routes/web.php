@@ -40,6 +40,7 @@ Route::get('/spoofers/{cheat}', 'CheatsController@spoofer')->name('cheats.spoofe
 Route::get('/cheats', 'CheatsController@games')->name('cheats.games');
 Route::get('/cheats/{game}', 'CheatsController@game')->name('cheats.game');
 Route::get('/cheats/{game}/{cheat}', 'CheatsController@cheat')->name('cheats.cheat');
+Route::post('/cheats/{cheat}/buy', 'CheatsController@buy')->name('cheats.buy');
 
 Route::get('/spoofer', function () {
     return view('pages.spoofer');
