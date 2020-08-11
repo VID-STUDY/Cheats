@@ -47,7 +47,7 @@
                                 <b class="mr-2">Разработчик:</b>{{ $cheat->manufacturer }}<br />
                             @endif
                         </p>
-                        <a type="button" data-toggle="modal" data-target="#buyModal" class="btn btn-lg btn-buy-cheat">Купить</a>
+                        <a type="button" @auth data-toggle="modal" data-target="#buyModal" @elseauth href="{{ route('login') }}" @endauth class="btn btn-lg btn-buy-cheat">Купить</a>
                     </div>
                 </div>
             </div>
@@ -106,6 +106,7 @@
             </nav>
         </div>
     </main>
+    @auth
     <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
         <div class="d-flex h-100">
             <div class="modal-dialog m-auto">
@@ -136,6 +137,7 @@
             </div>
         </div>
     </div>
+    @endauth
     <style>
         @media (max-width: 900px) {
             #vk-vk {
