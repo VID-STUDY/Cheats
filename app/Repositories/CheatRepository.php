@@ -25,7 +25,7 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
         $image = $request->file('image');
         if ($image) {
             $extension = $image->getClientOriginalExtension();
-            $filename = 'images/' . $image->getFilename() . Str::random(10) . '.' . $extension;
+            $filename = 'images/' . $image->getClientOriginalName() . Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($filename, File::get($image));
             $cheat->image = $filename;
             $cheat->save();
