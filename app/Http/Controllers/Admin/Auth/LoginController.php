@@ -47,4 +47,9 @@ class LoginController extends Controller
     {
         return view('admin.auth.login');
     }
+
+    public function redirectTo()
+    {
+        return '/admin';
+    }
 }
