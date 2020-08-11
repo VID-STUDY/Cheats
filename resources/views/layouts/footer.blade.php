@@ -51,9 +51,9 @@
       <div class="col-md-4">
         <h5>Последние статьи</h5>
         <ul class="list-group text-muted pl-4 pr-4">
-          <li><a href="post.php@newid=122.html" class="hvr-icon-pulse" title="Phoenix Rainbow Six Siege - Purchase Page"><i class="fas fa-angle-right hvr-icon mr-2"></i>Phoenix Rainbow Six Siege ...</a></li>
-          <li><a href="post.php@newid=120.html" class="hvr-icon-pulse" title="Phoenix Rainbow Six Siege - Инструкция по активации товара"><i class="fas fa-angle-right hvr-icon mr-2"></i>Phoenix Rainbow Six Siege ...</a></li>
-          <li><a href="post.php@newid=121.html" class="hvr-icon-pulse" title="Phoenix Rainbow Six Siege - Product Activation Instruction"><i class="fas fa-angle-right hvr-icon mr-2"></i>Phoenix Rainbow Six Siege ...</a></li>
+            @foreach($lastCheats as $lastCheat)
+                <li><a href="@if ($lastCheat->type == 'spoofer') {{ route('cheats.spoofer', $lastCheat->slug) }} @else {{ route('cheats.cheat', $lastCheat->slug) }} @endif" class="hvr-icon-pulse" title="{{ $lastCheat->name }}"><i class="fas fa-angle-right hvr-icon mr-2"></i>{{ $lastCheat->name }}</a></li>
+            @endforeach
         </ul>
       </div>
     </div>
