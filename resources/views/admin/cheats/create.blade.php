@@ -102,7 +102,7 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('file') is-invalid @enderror">
                             <div class="form-material">
-                                <input type="file" name="file" id="file" class="form-control" accept=".zip, .rar">
+                                <input type="file" name="file" id="file" class="form-control" accept=".zip">
                                 <label for="image">Программа</label>
                                 <div class="form-text text-muted text-right">Архив с программой и инструкцией</div>
                             </div>

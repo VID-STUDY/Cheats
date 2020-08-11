@@ -32,7 +32,7 @@ class CheatRequest extends FormRequest
             ],
             'description' => 'required|string',
             'image' => 'nullable|image',
-            'file' => 'nullable|file|mimes:rar,zip',
+            'file' => 'nullable|file|mimes:zip',
             'game_id' => 'required|integer'
         ];
     }
