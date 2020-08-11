@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'О проекте WH-SATANO')
+@section('title', 'О проекте DragonBreath')
 
 @section('header')
     @include('layouts.header')
@@ -8,46 +8,20 @@
 
 @section('content')
 <section id="about">
-<div class="container pt-5 pb-5">
-<h1>Информация о проекте WH-SATANO</h1>
+<div class="container row m-auto pl-5 pt-5 pb-5">
+<h1>Информация о проекте <font color="#D85E53">DragonBreath</font></h1>
 <p>
-<strong>WH-SATANO</strong> - проект, основанный в 2015 году для разработки приватного программного обеспечения для игр.<br /> Создатели проекта с момента реализации своей идеи и по сей день придерживаются строгих правил, согласно которым любой продукт, выпущенный от имени проекта, обязан быть проработанным до мелочей, а так же должен быть доступным для всех благодаря низким ценам.<br /><br /> На текущий квартал WH-SATANO старается поддерживать программное обеспечение для таких игр, как <b>Counter Strike: Global Offensive</b>, <b>RUST</b>, <b>PUBG</b>, <b>WarFace</b> и <b>Apex</b>.
+Мы небольшой коллектив с наполеоновскими амбициями и стремлением к совершенствованию производимых нами товаров и услуг. В их число входят: фирменный спуфер, читы (скоро) на Apex: Legends, RaibowSixSiege, CS:GO, PUBG, Paladins. Также ведётся активная разработка макросов.
+Мы на рынке относительно недавно и поэтому остро нуждаемся в вашей поддержке, отзывах и критике. Тем не менее, разработчики Dragon’s уже имеют довольно значительный опыт в работе с клиентами на площадке Funpay.
+Примечание: если вы обнаружили какую бы то ни было помеху в работе сайта или предоставляемых нами услуг, просьба сообщить в техподдержку или в онлайн чат.
+Спасибо за то, что выбрали наш сайт.
+
 </p>
-<div id="curve_chart" style="min-height: 500px" class="margin-auto w-100 animated pulse"></div>
+
 </div>
 </section>
 
 
-<script type="b1ea62bcaea4d15c382a1a91-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-<script type="b1ea62bcaea4d15c382a1a91-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-<div id="vk-vk">
-<div id="vk_community_messages"></div>
-</div>
-<script type="b1ea62bcaea4d15c382a1a91-text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
-                expandTimeout: "5000",
-                disableExpandChatSound: "1",
-                tooltipButtonText: "Есть вопрос?"
-            });
-
-        </script>
-<style>
-            @media (max-width: 900px) {
-                #vk-vk {
-                    display: none!important;
-                }
-            }
-
-        </style>
 
 <script type="b1ea62bcaea4d15c382a1a91-text/javascript">
     (function(d, w, c) {

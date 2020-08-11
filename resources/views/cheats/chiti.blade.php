@@ -75,36 +75,7 @@
 Над ними на протяжении многих лет ведётся работа, в ходе которой мы стараемся угодить всем нашим пользователям для того, чтобы каждый игрок смог насладиться комфортной игрой с софтом без каких-либо проблем. Феникс - по-настоящему качественный и проверенный временем продукт, который годами дережется без детектом и любых инцедентов с банами, а феникс лайт - его упрощенная и более дешевая версия для тех, кому нужен минимум функций: вх, триггер бот и скинченжер. Выбирай свой хак и покоряй матчмейкинг вместе с нами!</p>
 </main>
 
-<script type="56535746ca67f1648817fa11-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-<script type="56535746ca67f1648817fa11-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-<div id="vk-vk">
-<div id="vk_community_messages"></div>
-</div>
-<script type="56535746ca67f1648817fa11-text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
-                expandTimeout: "5000",
-                disableExpandChatSound: "1",
-                tooltipButtonText: "Есть вопрос?"
-            });
 
-        </script>
-<style>
-            @media (max-width: 900px) {
-                #vk-vk {
-                    display: none!important;
-                }
-            }
-
-        </style>
 
 <script type="56535746ca67f1648817fa11-text/javascript">
     (function(d, w, c) {

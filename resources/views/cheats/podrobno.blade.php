@@ -11,7 +11,7 @@
 @endsection
 
 @section('content')
-<main class="p-1 dragon-bg" style="background:url('{{ asset('img/dragonhack-bg.webp') }}')"> 
+<main class="p-1 dragon-bg" style="background:url('{{ asset('img/dragonhack-bg.webp') }}')">
   <div class="container text-center">
   <h1 class="dh-h1 mt-5">BlastHack</h1>
   <div class="text animated shake"></div>
@@ -157,36 +157,6 @@
   </div>
 </main>
 
-<script type="7c970f9dee8bf3fd5daaf159-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-<script type="7c970f9dee8bf3fd5daaf159-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-<div id="vk-vk">
-<div id="vk_community_messages"></div>
-</div>
-<script type="7c970f9dee8bf3fd5daaf159-text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
-                expandTimeout: "5000",
-                disableExpandChatSound: "1",
-                tooltipButtonText: "Есть вопрос?"
-            });
-
-        </script>
-<style>
-            @media (max-width: 900px) {
-                #vk-vk {
-                    display: none!important;
-                }
-            }
-
-        </style>
 
 <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
     (function(d, w, c) {

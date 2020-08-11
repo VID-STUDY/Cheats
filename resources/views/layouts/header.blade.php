@@ -29,11 +29,15 @@
         <a class="nav-link text-white" href="{{ route('cheats.games') }}">Читы</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('guarantees') }}">Гарантия</a>
+        <a class="nav-link text-white" href="{{ route('guarantees') }}">О нас</a>
       </li>
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('contacts') }}">Контакты</a>
       </li>
+      <!--
+      <li class="nav-item pl-1 pr-1">
+        <a class="nav-link text-white" href="{{ route('about') }}">О нас</a>
+      </li> -->
       @if(Auth::check())
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('account') }}">Личный кабинет</a>
@@ -43,9 +47,7 @@
           <a class="nav-link text-white" href="{{ route('login') }}">Авторизация</a>
         </li>
       @endif
-      <!-- <li class="nav-item pl-1 pr-1">
-        <a class="nav-link" href="{{ route('about') }}">О нас</a>
-      </li> -->
+
     </ul>
   </div>
 </nav>

@@ -75,36 +75,7 @@
         </center>
       </div>
 </section>
-<script type="bdf0c591f975c814b1a81891-text/javascript">
-    var ww = window.screen.width; // ширина
-    var hh = window.screen.height; // высота
-    if(ww < 500 && hh < 900) {
-        console.log("Mobile");
-    } else {
-        console.log("Добро пожаловать на ПК версию сайта! Приятного пользования.");
-        document.write("<script type='text/javascript/' src='https://vk.com/js/api/openapi.js?159'/>");
-    }
-</script>
-<script type="bdf0c591f975c814b1a81891-text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-<div id="vk-vk">
-<div id="vk_community_messages"></div>
-</div>
-<script type="bdf0c591f975c814b1a81891-text/javascript">
-            VK.Widgets.CommunityMessages("vk_community_messages", 103745867, {
-                expandTimeout: "5000",
-                disableExpandChatSound: "1",
-                tooltipButtonText: "Есть вопрос?"
-            });
 
-        </script>
-<style>
-            @media (max-width: 900px) {
-                #vk-vk {
-                    display: none!important;
-                }
-            }
-
-        </style>
 
 <script type="bdf0c591f975c814b1a81891-text/javascript">
     (function(d, w, c) {
