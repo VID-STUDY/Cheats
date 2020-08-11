@@ -46,6 +46,11 @@ class Cheat extends Model
         return $this->hasMany(SubscriptionDuration::class);
     }
 
+    public function images()
+    {
+        return $this->hasMany(CheatImage::class);
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
