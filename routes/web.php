@@ -36,16 +36,18 @@ Route::get('/contacts', 'HomeController@contacts')->name('contacts');
 
 // Cheats routes
 Route::get('/spoofers', 'CheatsController@spoofers')->name('cheats.spoofers');
+Route::get('/spoofers/{cheat}', 'CheatsController@spoofer')->name('cheats.spoofer');
+Route::get('/cheats', 'CheatsController@games')->name('cheats.games');
+Route::get('/cheats/{game}', 'CheatsController@game')->name('cheats.game');
+Route::get('/cheats/{game}/{cheat}', 'CheatsController@cheat')->name('cheats.cheat');
 
 Route::get('/spoofer', function () {
     return view('pages.spoofer');
 })->name('spoofer');
 
-Route::get('/user/settings', function () {
-    return view('pages.settings');
-})->name('settings');
+Route::get('/account/settings', 'AccountController@settings')->name('account.settings');
 
-Route::post('/settings', 'SettingsController@update')->name('settings_post');
+Route::post('/account/settings', 'AccountController@storeSettings')->name('account.settings.save');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,26 +55,7 @@ Route::post('/settings', 'SettingsController@update')->name('settings_post');
 |Это мы в телеграмме обсуждали. Те две страницы и шаблонизатор для них. Там скорее всего нужен слаг, но я правильно точно не сделаю)
 | Поэтому пока вот так)
 */
-Route::get('/chiti', function () {
-    return view('cheats.chiti');
-})->name('chiti');
 
-Route::get('/chiti/podrobno', function () {
-    return view('cheats.podrobno');
-})->name('podrobno');
-
-Route::get('/games', function () {
-    return view('cheats.games');
-})->name('games');
-
-Route::get('/macros', function () {
-    return view('cheats.macros');
-})->name('macros');
-
-Route::get('/user', function () {
-    return view('pages.kabinet');
-})->name('kabinet');
+Route::get('/account', 'AccountController@index')->name('account');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

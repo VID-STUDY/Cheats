@@ -22,38 +22,21 @@
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('home') }}">Главная</a>
       </li>
-      <!-- <li class="nav-item dropdown pl-1 pr-1">
-        <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Приватные читы</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown08">
-          <a class="dropdown-item hvr-bounce-out" href="{{ route('chiti') }}">C</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_pubg/index.html">Читы PUBG</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_rust/index.html">Читы RUST</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_warface/index.html">Читы WarFace</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_apex/index.html">Читы Apex Legends</a>
-          <a class="dropdown-item hvr-bounce-out" href="chiti_r6s/index.html">Читы R6S</a>
-        </div>
-      </li> -->
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('chiti') }}">Спуфер</a>
+        <a class="nav-link text-white" href="{{ route('cheats.spoofers') }}">Спуфер</a>
       </li>
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('games') }}">Читы</a>
+        <a class="nav-link text-white" href="{{ route('cheats.games') }}">Читы</a>
       </li>
-      <!-- <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('macros') }}">Макросы</a>
-      </li> -->
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('guarantees') }}">Гарантия</a>
       </li>
-      <!-- <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('cooperation') }}">Отзывы</a>
-      </li> -->
       <li class="nav-item pl-1 pr-1">
         <a class="nav-link text-white" href="{{ route('contacts') }}">Контакты</a>
       </li>
       @if(Auth::check())
       <li class="nav-item pl-1 pr-1">
-        <a class="nav-link text-white" href="{{ route('kabinet') }}">Личный кабинет</a>
+        <a class="nav-link text-white" href="{{ route('account') }}">Личный кабинет</a>
       </li>
       @else
         <li class="nav-item pl-1 pr-1">

@@ -89,15 +89,10 @@
       </a>
     </div>
     <div class="col pb-2">
-      <a href="{{ route('games') }}">
+      <a href="{{ route('cheats.games') }}">
           <div class="cheats"></div>
       </a>
     </div>
-    <!-- <div class="col pb-2">
-      <a href="{{ route('macros') }}">
-          <div class="macros"></div>
-      </a>
-    </div> -->
 
 
   </div>
