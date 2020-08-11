@@ -28,7 +28,7 @@
                     <div class="content-header-item">
                         <a class="link-effect font-w700" href="{{ route('admin.index') }}">
                             <i class="si si-fire text-primary"></i>
-                            <span class="font-size-xl text-dual-primary-dark">Lar</span><span class="font-size-xl text-primary">avael</span>
+                            <span class="font-size-xl text-dual-primary-dark">Lar</span><span class="font-size-xl text-primary">avel</span>
                         </a>
                     </div>
                     <!-- END Logo -->
