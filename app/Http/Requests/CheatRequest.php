@@ -33,8 +33,6 @@ class CheatRequest extends FormRequest
             'description' => 'required|string',
             'image' => 'nullable|image',
             'file' => 'nullable|file|mimes:rar,zip',
-            'features' => 'nullable|array',
-            'durations' => 'required|array',
             'game_id' => 'required|integer'
         ];
     }
