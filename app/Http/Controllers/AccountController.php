@@ -11,7 +11,8 @@ class AccountController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('pages.account.index', compact('user'));
+        $subscriptions = $user->subscriptions()->orderBy('serialstatus', 'desc')->get();
+        return view('pages.account.index', compact('user', 'subscriptions'));
     }
 
     public function settings()
