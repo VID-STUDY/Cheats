@@ -40,24 +40,30 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Покупка</th>
-                                <th scope="col">Оставшиеся время действия</th>
-                                <th scope="col">Действителен до</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Спуфер</td>
-                                <td>720 часов</td>
-                                <td>04.09.2020</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        @if ($subscriptions->count() > 0)
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Покупка</th>
+                                    <th scope="col">Оставшиеся время действия</th>
+                                    <th scope="col">Действителен до</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($subscriptions as $subscription)
+                                    <tr>
+                                        <td>{{ $subscription->id }}</td>
+                                        <td>{{ $subscription->cheat->name }}</td>
+                                        <td>{{ $subscription->remainingTime() }} часов</td>
+                                        <td>{{ $subscription->validUntil()->format('d.m.Y h:i:s') }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        @else
+                            <p class="text-center">У вас ещё нет покупок</p>
+                        @endif
                     </div>
                 </div>
             </div>
