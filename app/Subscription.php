@@ -29,4 +29,15 @@ class Subscription extends Model
     {
         return $this->belongsTo(Cheat::class);
     }
+
+    public function validUntil()
+    {
+        $createdAt = $this->created_at;
+        return $createdAt->addHours($this->serialtime);
+    }
+
+    public function remainingTime()
+    {
+        return now()->diffInHours($this->validUntil());
+    }
 }
