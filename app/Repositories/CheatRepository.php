@@ -73,7 +73,7 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
         if ($file) {
             Storage::disk('public')->delete($cheat->file);
             $extension = $file->getClientOriginalExtension();
-            $filename = 'files/' . $file->getFilename() . Str::random(10) . '.' . $extension;
+            $filename = 'files/' . $file->getClientOriginalName() . Str::random(10) . '.' . $extension;
             Storage::disk('public')->put($filename, File::get($file));
             $cheat->file = $filename;
             $cheat->save();
@@ -92,10 +92,10 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
         }
         $features = $request->get('features', []);
         $cheat->features()->delete();
-        $cheat->features()->createMany($features);
-        $durations = $request->get('durations');
+        $cheat->features()->createMany(array_values($features));
+        $durations = $request->get('durations', []);
         $cheat->durations()->delete();
-        $cheat->durations()->createMany($durations);
+        $cheat->durations()->createMany(array_values($durations));
         return $cheat;
     }
 
