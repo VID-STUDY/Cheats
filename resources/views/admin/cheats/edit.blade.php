@@ -283,7 +283,7 @@
             </div>
         </div>
     </template>
-    <div id="duration-counter" class="d-none">{{ $cheat->durations()->count() }}</div>
+    <div id="duration-counter" class="d-none">{{ $cheat->durations()->count() - 1 }}</div>
     <template id="feature-template">
         <div id="feature{0}">
             <div class="d-flex justify-content-end">
@@ -311,7 +311,7 @@
             </div>
         </div>
     </template>
-    <div id="feature-counter" class="d-none">{{ $cheat->features()->count() }}</div>
+    <div id="feature-counter" class="d-none">{{ $cheat->features()->count() - 1 }}</div>
 @endsection
 
 @section('js')
