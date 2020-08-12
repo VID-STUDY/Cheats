@@ -40,7 +40,7 @@ class SubscriptionDuration extends Model
                 $postfix = "месяца";
             return "$months $postfix";
         } else {
-            $postfix = "месяцев";
+            $postfix = "дней";
             $days = $duration / 24;
             if ($days == 1)
                 $postfix = "день";
