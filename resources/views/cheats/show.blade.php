@@ -130,7 +130,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал</button>
-                            <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате ({{ number_format($durations[0]->price, 0, '.', ' ') }} руб.)</button>
+                            <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате ({{ number_format($cheat->durations[0]->price, 0, '.', ' ') }} руб.)</button>
                         </div>
                     </form>
                 </div>
