@@ -1,4 +1,4 @@
-jQuery(function () {
+$(function () {
     $('#customRange2').on('change', function () {
         let index = this.value;
         let price = $(`#durationPrice${index}`).html();
