@@ -31,9 +31,11 @@
                         <div class="form-group @error('type') is-invalid @enderror">
                             <div class="form-material floating">
                                 <select type="text" name="type" id="type" class="form-control">
-                                    <option @if ($cheat->type == 'spoofer') selected @endif value="spoofer">Спуфер</option>
+                                    <option @if ($cheat->type == 'spoofer') selected @endif value="spoofer">Спуфер
+                                    </option>
                                     <option @if ($cheat->type == 'cheat') selected @endif value="cheat">Чит</option>
-                                    <option @if ($cheat->type == 'macros') selected @endif value="macros">Макрос</option>
+                                    <option @if ($cheat->type == 'macros') selected @endif value="macros">Макрос
+                                    </option>
                                 </select>
                                 <label for="type">Тип</label>
                             </div>
@@ -58,7 +60,8 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('release_date') is-invalid @enderror">
                             <div class="form-material floating">
-                                <input type="text" name="release_date" id="release_date" value="{{ $cheat->release_date  }}" class="form-control">
+                                <input type="text" name="release_date" id="release_date"
+                                       value="{{ $cheat->release_date  }}" class="form-control">
                                 <label for="release_date">Дата релиза</label>
                             </div>
                             @error('release_date')
@@ -69,7 +72,8 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('manufacturer') is-invalid @enderror">
                             <div class="form-material floating">
-                                <input type="text" name="manufacturer" id="manufacturer" value="{{ $cheat->manufacturer }}" class="form-control">
+                                <input type="text" name="manufacturer" id="manufacturer"
+                                       value="{{ $cheat->manufacturer }}" class="form-control">
                                 <label for="manufacturer">Разработчик</label>
                             </div>
                             @error('manufacturer')
@@ -82,7 +86,8 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group @error('image') is-invalid @enderror">
                             <div class="form-material">
-                                <input type="file" name="image" id="image" class="form-control" accept="image/png, image/jpeg">
+                                <input type="file" name="image" id="image" class="form-control"
+                                       accept="image/png, image/jpeg">
                                 <label for="image">Изображение</label>
                             </div>
                             @error('image')
@@ -90,13 +95,15 @@
                             @enderror
                         </div>
                         @if ($cheat->image)
-                            <img src="{{ asset('storage/'.$cheat->image) }}" alt="{{ $cheat->name }}" class="img-thumbnail">
+                            <img src="{{ asset('storage/'.$cheat->image) }}" alt="{{ $cheat->name }}"
+                                 class="img-thumbnail">
                         @endif
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <div class="form-material">
-                                <input type="file" name="images[]" multiple id="images" class="form-control" accept="image/png, image/jpeg">
+                                <input type="file" name="images[]" multiple id="images" class="form-control"
+                                       accept="image/png, image/jpeg">
                                 <label for="images">Скрины из игры</label>
                             </div>
                         </div>
@@ -122,7 +129,8 @@
                             @enderror
                         </div>
                         @if ($cheat->file)
-                            <a href="{{ asset('storage/'.$cheat->file) }}" class="btn btn-alt-primary"><i class="fa fa-download"></i> Скачать</a>
+                            <a href="{{ asset('storage/'.$cheat->file) }}" class="btn btn-alt-primary"><i
+                                    class="fa fa-download"></i> Скачать</a>
                         @endif
                     </div>
                     <div class="col-sm-12 col-md-6">
@@ -131,7 +139,9 @@
                                 <textarea name="system_requirements" id="system_requirements" cols="30" rows="8"
                                           class="form-control">{{ $cheat->system_requirements }}</textarea>
                                 <label for="system_requirements">Системные требования</label>
-                                <div class="form-text text-muted text-right">Перечислите системные требования через точку с запятой</div>
+                                <div class="form-text text-muted text-right">Перечислите системные требования через
+                                    точку с запятой
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,42 +150,47 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <div class="form-material floating">
-                                <textarea name="functional" id="functional" cols="30" rows="8" class="form-control">{{ $cheat->functional }}</textarea>
+                                <textarea name="functional" id="functional" cols="30" rows="8"
+                                          class="form-control">{{ $cheat->functional }}</textarea>
                                 <label for="functional">Функционал</label></div>
-                            <div class="form-text text-muted text-right">Перечислите основные элементы через точку с запятой</div>
+                            <div class="form-text text-muted text-right">Перечислите основные элементы через точку с
+                                запятой
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <div class="form-material floating">
-                                <textarea name="additional_info" id="additional_info" cols="30" rows="8" class="form-control">{{ $cheat->additional_info }}</textarea>
+                                <textarea name="additional_info" id="additional_info" cols="30" rows="8"
+                                          class="form-control">{{ $cheat->additional_info }}</textarea>
                                 <label for="additional_info">Дополнительная информация</label></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group @error('game_id') is-invalid @enderror">
+                        <div class="form-material floating">
+                            <select type="text" name="game_id" id="game_id" class="form-control">
+                                @foreach($games as $game)
+                                    <option @if ($cheat->game_id == $game->id) selected
+                                            @endif value="{{ $game->id }}">{{ $game->name }}</option>
+                                @endforeach
+                            </select>
+                            <label for="game_id">Игра</label>
+                        </div>
+                        @error('game_id')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group @error('game_id') is-invalid @enderror">
-                            <div class="form-material floating">
-                                <select type="text" name="game_id" id="game_id" class="form-control">
-                                    @foreach($games as $game)
-                                        <option @if ($cheat->game_id == $game->id) selected @endif value="{{ $game->id }}">{{ $game->name }}</option>
-                                    @endforeach
-                                </select>
-                                <label for="game_id">Игра</label>
-                            </div>
-                            @error('game_id')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="form-group">
-                            <div class="form-material floating">
-                                <input type="number" name="sort_order" id="sort_order" min="1" value="{{ $cheat->sort_order }}" class="form-control">
-                                <label for="sort_order">Порядковый номер</label>
-                            </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <div class="form-material floating">
+                            <input type="number" name="sort_order" id="sort_order" min="1"
+                                   value="{{ $cheat->sort_order }}" class="form-control">
+                            <label for="sort_order">Порядковый номер</label>
                         </div>
                     </div>
                 </div>
@@ -185,20 +200,26 @@
             <div class="block-header block-header-default">
                 <h3 class="block-title">Периоды подписки</h3>
                 <div class="block-options">
-                    <button type="button" id="addDurationButton" class="btn btn-alt-primary"><i class="si si-plus"></i> Добавить период</button>
+                    <button type="button" id="addDurationButton" class="btn btn-alt-primary"><i class="si si-plus"></i>
+                        Добавить период
+                    </button>
                 </div>
             </div>
             <div class="block-content" id="durationsContainer">
                 @foreach($cheat->durations as $key => $duration)
                     <div id="duration{{ $key }}">
                         <div class="d-flex justify-content-end">
-                            <button type="button" data-target-id="duration{{ $key }}" class="btn btn-alt-danger delete-duration-button"><i class="fa fa-trash"></i> Удалить</button>
+                            <button type="button" data-target-id="duration{{ $key }}"
+                                    class="btn btn-alt-danger delete-duration-button"><i class="fa fa-trash"></i>
+                                Удалить
+                            </button>
                         </div>
                         <div class="row">
                             <div class="col-ms-12 col-md-6">
                                 <div class="form-group">
                                     <div class="form-material floating">
-                                        <input type="text" name="durations[{{ $key }}][duration]" id="duration{{ $key }}duration"
+                                        <input type="text" name="durations[{{ $key }}][duration]"
+                                               id="duration{{ $key }}duration"
                                                class="form-control" value="{{ $duration->duration }}"><label
                                             for="duration{{ $key }}duration">Период</label>
                                     </div>
@@ -207,7 +228,8 @@
                             <div class="col-ms-12 col-md-6">
                                 <div class="form-group">
                                     <div class="form-material floating">
-                                        <input type="text" name="durations[{{ $key }}][price]" id="duration{{ $key }}price"
+                                        <input type="text" name="durations[{{ $key }}][price]"
+                                               id="duration{{ $key }}price"
                                                class="form-control" value="{{ $duration->price }}"><label
                                             for="duration{{ $key }}price">Цена</label>
                                     </div>
@@ -222,14 +244,18 @@
             <div class="block-header block-header-default">
                 <h3 class="block-title">Особенности</h3>
                 <div class="block-options">
-                    <button type="button" id="addFeatureButton" class="btn btn-alt-primary"><i class="si si-plus"></i> Добавить особенность</button>
+                    <button type="button" id="addFeatureButton" class="btn btn-alt-primary"><i class="si si-plus"></i>
+                        Добавить особенность
+                    </button>
                 </div>
             </div>
             <div class="block-content" id="featuresContainer">
                 @foreach($cheat->features as $key => $feature)
                     <div id="feature{{ $key }}">
                         <div class="d-flex justify-content-end">
-                            <button type="button" data-target-id="feature{{ $key }}" class="btn btn-alt-danger delete-feature-button"><i class="fa fa-trash"></i> Удалить</button>
+                            <button type="button" data-target-id="feature{{ $key }}"
+                                    class="btn btn-alt-danger delete-feature-button"><i class="fa fa-trash"></i> Удалить
+                            </button>
                         </div>
                         <div class="row">
                             <div class="col-ms-12 col-md-6">
@@ -259,7 +285,9 @@
     <template id="duration-template">
         <div id="duration{0}">
             <div class="d-flex justify-content-end">
-                <button type="button" data-target-id="duration{0}" class="btn btn-alt-danger delete-duration-button"><i class="fa fa-trash"></i> Удалить</button>
+                <button type="button" data-target-id="duration{0}" class="btn btn-alt-danger delete-duration-button"><i
+                        class="fa fa-trash"></i> Удалить
+                </button>
             </div>
             <div class="row">
                 <div class="col-ms-12 col-md-6">
@@ -287,7 +315,9 @@
     <template id="feature-template">
         <div id="feature{0}">
             <div class="d-flex justify-content-end">
-                <button type="button" data-target-id="feature{0}" class="btn btn-alt-danger delete-feature-button"><i class="fa fa-trash"></i> Удалить</button>
+                <button type="button" data-target-id="feature{0}" class="btn btn-alt-danger delete-feature-button"><i
+                        class="fa fa-trash"></i> Удалить
+                </button>
             </div>
             <div class="row">
                 <div class="col-ms-12 col-md-6">
