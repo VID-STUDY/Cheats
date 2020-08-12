@@ -124,19 +124,24 @@
                             <input type="range" name="subscription" id="customRange2" class="custom-range" min="1" max="{{ $cheat->durations()->count() }}" value="1">
                             <div class="ranges-dragon mb-5">
                                 @foreach($cheat->durations as $duration)
-                                    <span>{{ $duration->getPeriod() }} ({{ number_format($duration->price, 0, '.', ' ') }} руб.)</span>
+                                    <span>{{ $duration->getPeriod() }}</span>
                                 @endforeach
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал</button>
-                            <button type="submit" class="btn btn-primary">Перейти к оплате</button>
+                            <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате ({{ number_format($durations[0]->price, 0, '.', ' ') }} руб.)</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+        <div class="d-none">
+            @foreach($cheat->durations as $key => $duration)
+                <span id="durationPrice{{ $key }}">{{ number_format($duration->price, 0, '.', ' ') }}</span>
+            @endforeach
+        </div>
     @endauth
     <style>
         @media (max-width: 900px) {
@@ -151,6 +156,7 @@
     <script src="/js/jquery-3.3.1.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="/js/bootstrap.bundle.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
+    <script src="{{ asset('js/buyCheat.js') }}"></script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         'use strict';
 
@@ -262,49 +268,6 @@
     </script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         /* Формирование ссылки при выборе чита*/
-
-        function OnSelectionChange() {
-            //alert(typeof(document.getElementById("priceRange").value));
-            // var selectedOption = select.options[select.selectedIndex];
-            switch (document.getElementById("priceRange").value)
-			{
-                case '1':
-                    document.getElementById("buy-shop").href = "../buy.php?cheat=Blast&game=CSGO&days=3&lang=ru-RU&url_yt=https://www.youtube.com/embed/QwjjB7Y0ZVo";
-                    $("#buy-shop").attr('target', '_blank');
-                    document.getElementById("resultDays").innerHTML = "3 дня - 50 рублей";
-                    document.getElementById("resultDays").classList.remove("animated", "flipInY", "flipInX", "jackInTheBox", "bounceIn");
-                    document.getElementById("resultDays").classList.add("animated", "flipInX");
-                    break;
-                case '2':
-                    document.getElementById("buy-shop").href = "../buy.php?cheat=Blast&game=CSGO&days=6&lang=ru-RU&url_yt=https://www.youtube.com/embed/QwjjB7Y0ZVo";
-                    $("#buy-shop").attr('target', '_blank');
-                    document.getElementById("resultDays").innerHTML = "6 дней - 99 рублей";
-                    document.getElementById("resultDays").classList.remove("animated", "flipInY", "flipInX", "jackInTheBox", "bounceIn");
-                    document.getElementById("resultDays").classList.add("animated", "flipInY");
-                    break;
-                case '3':
-                    document.getElementById("buy-shop").href = "../buy.php?cheat=Blast&game=CSGO&days=15&lang=ru-RU&url_yt=https://www.youtube.com/embed/QwjjB7Y0ZVo";
-                    $("#buy-shop").attr('target', '_blank');
-                    document.getElementById("resultDays").innerHTML = "15 дней - 199 рублей";
-                    document.getElementById("resultDays").classList.remove("animated", "flipInY", "flipInX", "jackInTheBox", "bounceIn");
-                    document.getElementById("resultDays").classList.add("animated", "jackInTheBox");
-                    break;
-                case '4':
-                    document.getElementById("buy-shop").href = "../buy.php?cheat=Blast&game=CSGO&days=30&lang=ru-RU&url_yt=https://www.youtube.com/embed/QwjjB7Y0ZVo";
-                    $("#buy-shop").attr('target', '_blank');
-                    document.getElementById("resultDays").innerHTML = "30 дней - 349 рублей";
-                    document.getElementById("resultDays").classList.remove("animated", "flipInY", "flipInX", "jackInTheBox", "bounceIn");
-                    document.getElementById("resultDays").classList.add("animated", "bounceIn");
-                    break;
-                case '5':
-                    document.getElementById("buy-shop").href = "../buy.php?cheat=Blast&game=CSGO&days=AllTime&lang=ru-RU&url_yt=https://www.youtube.com/embed/QwjjB7Y0ZVo";
-                    $("#buy-shop").attr('target', '_blank');
-                    document.getElementById("resultDays").innerHTML = "Навсегда - 1499 рублей";
-                    document.getElementById("resultDays").classList.remove("animated", "flipInY", "flipInX", "jackInTheBox", "bounceIn");
-                    document.getElementById("resultDays").classList.add("animated", "bounceIn");
-                    break;
-            }
-        }
 
 		 $('#yt-video').click(function() {
             console.log(":asd");
