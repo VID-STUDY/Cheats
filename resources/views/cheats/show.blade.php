@@ -156,7 +156,6 @@
     <script src="/js/jquery-3.3.1.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="/js/bootstrap.bundle.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
-    <script src="{{ asset('js/buyCheat.js') }}"></script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         'use strict';
 
@@ -290,4 +289,8 @@
 
     </script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="7c970f9dee8bf3fd5daaf159-|49" defer=""></script>
+@endsection
+
+@section('js')
+    <script src="{{ asset('js/buyCheat.js') }}"></script>
 @endsection
