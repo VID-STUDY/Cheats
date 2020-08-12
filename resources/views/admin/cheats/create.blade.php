@@ -126,8 +126,8 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="form-group">
                             <div class="form-material floating">
-                                <textarea name="functionality" id="functionality" cols="30" rows="8" class="form-control"></textarea>
-                                <label for="functionality">Функционал</label></div>
+                                <textarea name="functional" id="functional" cols="30" rows="8" class="form-control"></textarea>
+                                <label for="functional">Функционал</label></div>
                                 <div class="form-text text-muted text-right">Перечислите основные элементы через точку с запятой</div>
                         </div>
                     </div>
