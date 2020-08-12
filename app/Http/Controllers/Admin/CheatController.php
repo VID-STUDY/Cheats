@@ -97,7 +97,7 @@ class CheatController extends Controller
             'game_id' => 'required|integer'
         ]);
         $cheat = $this->cheatRepository->update($cheat, $request);
-        return redirect()->route('admin.cheats.index', "Чит {$cheat->name} изменён");
+        return redirect()->route('admin.cheats.index')->with('success', "Чит {$cheat->name} изменён");
     }
 
     /**
