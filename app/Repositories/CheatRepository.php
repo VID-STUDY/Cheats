@@ -47,7 +47,7 @@ class CheatRepository implements Interfaces\CheatRepositoryInterface
         }
         $features = $request->get('features', []);
         $cheat->features()->createMany(array_values($features));
-        $durations = $request->get('durations');
+        $durations = $request->get('durations', []);
         $cheat->durations()->createMany(array_values($durations));
         return $cheat;
     }
