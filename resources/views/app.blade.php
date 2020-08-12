@@ -106,8 +106,8 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/39582760" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 
-    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" async type="a696848f29c030b8171175e2-text/javascript"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" async type="a696848f29c030b8171175e2-text/javascript"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="a696848f29c030b8171175e2-|49" defer=""></script>
   @yield('js')
   </body>
