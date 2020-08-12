@@ -17,7 +17,8 @@
                         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 @foreach($cheat->images as $key => $image)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}" @if ($key == 0) class="active" @endif></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"
+                                        @if ($key == 0) class="active" @endif></li>
                                 @endforeach
                             </ol>
                             <div class="carousel-inner">
@@ -27,8 +28,13 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                               data-slide="prev"><span class="carousel-control-prev-icon"
+                                                       aria-hidden="true"></span><span
+                                    class="sr-only">Previous</span></a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                               data-slide="next"><span class="carousel-control-next-icon"
+                                                       aria-hidden="true"></span><span class="sr-only">Next</span></a>
                         </div>
                     @endif
                 </div>
@@ -39,35 +45,37 @@
                         <hr>
                         <p class="text-left about-cheat-text">
                             @if ($cheat->release_date)
-                                <b class="mr-2">Дата выхода:</b>{{ $cheat->release_date }}<br />
+                                <b class="mr-2">Дата выхода:</b>{{ $cheat->release_date }}<br/>
                             @endif
-                            <b class="mr-2">Игра:</b>{{ $game->name }}<br />
-                            <b class="mr-2">Тип:</b>@switch($cheat->type) @case('spoofer') Спуфер @break @case('cheat') Чит @break @case('macros') Макрос @break @default Неизвестно @endswitch<br />
+                            <b class="mr-2">Игра:</b>{{ $game->name }}<br/>
+                            <b class="mr-2">Тип:</b>@switch($cheat->type) @case('spoofer') Спуфер @break @case('cheat')
+                            Чит @break @case('macros') Макрос @break @default Неизвестно @endswitch<br/>
                             @if ($cheat->manufacturer)
-                                <b class="mr-2">Разработчик:</b>{{ $cheat->manufacturer }}<br />
+                                <b class="mr-2">Разработчик:</b>{{ $cheat->manufacturer }}<br/>
                             @endif
                         </p>
-                        <a type="button" @auth data-toggle="modal" data-target="#buyModal" @elseauth href="{{ route('login') }}" @endauth class="btn btn-lg btn-buy-cheat">Купить</a>
+                        <a type="button" @auth data-toggle="modal" data-target="#buyModal"
+                           @elseauth href="{{ route('login') }}" @endauth class="btn btn-lg btn-buy-cheat">Купить</a>
                     </div>
                 </div>
             </div>
             <div class="row mt-5">
                 <div class="col-md-8">
                     @if ($cheat->functional)
-                    <div class="cheat-defblock p-4">
-                        <h2>Функционал</h2>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul class="about-cheat-text">
-                                    @foreach(explode(';', $cheat->functional) as $func)
-                                        @if (!empty($func))
-                                            <li><i class="far fa-check-circle mr-2"></i>{{ $func }}</li>
-                                        @endif
-                                    @endforeach
-                                </ul>
+                        <div class="cheat-defblock p-4">
+                            <h2>Функционал</h2>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="about-cheat-text">
+                                        @foreach(explode(';', $cheat->functional) as $func)
+                                            @if (!empty($func))
+                                                <li><i class="far fa-check-circle mr-2"></i>{{ $func }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endif
                 </div>
                 <div class="col-md-4">
@@ -82,7 +90,7 @@
                         </div>
                         <hr>
                         @if ($cheat->system_requirements)
-                            <p class="about-cheat-text">Системные требования <br />
+                            <p class="about-cheat-text">Системные требования <br/>
                                 @foreach(explode(';', $cheat->system_requirements) as $requirement)
                                     @if (!empty($requirement))
                                         {{ $requirement }} <br>
@@ -100,43 +108,52 @@
             <nav aria-label="breadcrumb" class="mt-3">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}" title="Главная">Главная</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('cheats.game', $game->slug) }}" title="{{ $game->name }}">{{ $game->name }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('cheats.game', $game->slug) }}"
+                                                   title="{{ $game->name }}">{{ $game->name }}</a></li>
                     <li class="breadcrumb-item active"><a href="#">{{ $cheat->name }}</a></li>
                 </ol>
             </nav>
         </div>
     </main>
     @auth
-    <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
-        <div class="d-flex h-100">
-            <div class="modal-dialog m-auto">
-                <div class="modal-content p-2">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="buyModalLabel">Оформить покупку {{ $cheat->name }}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form method="post" action="{{ route('cheats.buy', $cheat->slug) }}">
-                        @csrf
-                        <div class="modal-body">
-                            <label for="customRange2" class="text-center d-block">Проведите ползунок влево или вправо и выберите нужный тариф</label>
-                            <input type="range" name="subscription" id="customRange2" class="custom-range" min="1" max="{{ $cheat->durations()->count() }}" value="1">
-                            <div class="ranges-dragon mb-5">
-                                @foreach($cheat->durations as $duration)
-                                    <span>{{ $duration->getPeriod() }}</span>
-                                @endforeach
+        @if ($cheat->durations()->count() > 0)
+            <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+                <div class="d-flex h-100">
+                    <div class="modal-dialog m-auto">
+                        <div class="modal-content p-2">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="buyModalLabel">Оформить покупку {{ $cheat->name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <form method="post" action="{{ route('cheats.buy', $cheat->slug) }}">
+                                @csrf
+                                <div class="modal-body">
+                                    <label for="customRange2" class="text-center d-block">Проведите ползунок влево или
+                                        вправо и выберите нужный тариф</label>
+                                    <input type="range" name="subscription" id="customRange2" class="custom-range"
+                                           min="1"
+                                           max="{{ $cheat->durations()->count() }}" value="1">
+                                    <div class="ranges-dragon mb-5">
+                                        @foreach($cheat->durations as $duration)
+                                            <span>{{ $duration->getPeriod() }}</span>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал
+                                    </button>
+                                    <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате
+                                        ({{ number_format($cheat->durations[0]->price, 0, '.', ' ') }} руб.)
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал</button>
-                            <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате ({{ number_format($cheat->durations[0]->price, 0, '.', ' ') }} руб.)</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        @endif
         <div class="d-none">
             @foreach($cheat->durations as $key => $duration)
                 <span id="durationPrice{{ $key }}">{{ number_format($duration->price, 0, '.', ' ') }}</span>
@@ -146,7 +163,7 @@
     <style>
         @media (max-width: 900px) {
             #vk-vk {
-                display: none!important;
+                display: none !important;
             }
         }
 
@@ -155,7 +172,8 @@
 
     <script src="/js/jquery-3.3.1.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script src="/js/bootstrap.bundle.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"
+            type="7c970f9dee8bf3fd5daaf159-text/javascript"></script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         'use strict';
 
@@ -264,6 +282,8 @@
 
         next();
 
+
+
     </script>
     <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
         /* Формирование ссылки при выборе чита*/
@@ -287,8 +307,11 @@
         }
 
 
+
+
     </script>
-    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="7c970f9dee8bf3fd5daaf159-|49" defer=""></script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
+            data-cf-settings="7c970f9dee8bf3fd5daaf159-|49" defer=""></script>
 @endsection
 
 @section('js')
