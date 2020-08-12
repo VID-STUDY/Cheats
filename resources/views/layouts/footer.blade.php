@@ -52,6 +52,9 @@
         <h5>Последние статьи</h5>
         <ul class="list-group text-muted pl-4 pr-4">
             @foreach($lastCheats as $lastCheat)
+                @if ($lastCheat->type !== 'spoofer' and !$lastCheat->game)
+                    @continue
+                @endif
                 <li><a href="@if ($lastCheat->type == 'spoofer') {{ route('cheats.spoofer', $lastCheat->slug) }} @else {{ route('cheats.cheat', ['game' => $lastCheat->game->slug, 'cheat' => $lastCheat->slug]) }} @endif" class="hvr-icon-pulse" title="{{ $lastCheat->name }}"><i class="fas fa-angle-right hvr-icon mr-2"></i>{{ $lastCheat->name }}</a></li>
             @endforeach
         </ul>
