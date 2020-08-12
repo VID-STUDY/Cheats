@@ -47,8 +47,19 @@ class CheatController extends Controller
      * @param CheatRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CheatRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'type' => [
+                'required',
+                Rule::in(['spoofer', 'cheat', 'macros'])
+            ],
+            'description' => 'required|string',
+            'image' => 'nullable|image',
+            'file' => 'nullable|file|mimes:zip',
+            'game_id' => 'required|integer'
+        ]);
         $cheat = $this->cheatRepository->create($request);
         return redirect()->route('admin.cheats.index')->with('success', "Чит {$cheat->name} добавлен");
     }
@@ -72,8 +83,19 @@ class CheatController extends Controller
      * @param  \App\Cheat  $cheat
      * @return \Illuminate\Http\Response
      */
-    public function update(CheatRequest $request, Cheat $cheat)
+    public function update(Request $request, Cheat $cheat)
     {
+        $request->validate([
+            'name' => 'required|string',
+            'type' => [
+                'required',
+                Rule::in(['spoofer', 'cheat', 'macros'])
+            ],
+            'description' => 'required|string',
+            'image' => 'nullable|image',
+            'file' => 'nullable|file|mimes:zip',
+            'game_id' => 'required|integer'
+        ]);
         $cheat = $this->cheatRepository->update($cheat, $request);
         return redirect()->route('admin.cheats.index', "Чит {$cheat->name} изменён");
     }
