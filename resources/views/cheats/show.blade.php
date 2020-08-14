@@ -56,7 +56,6 @@
                         </p>
                         <a type="button" @auth data-toggle="modal" data-target="#buyModal"
                            @elseauth href="{{ route('login') }}" @endauth class="btn btn-lg btn-buy-cheat">Купить</a>
-                        <a href="//free-kassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/17.png" title="Приём оплаты на сайте картами"></a>
                     </div>
                 </div>
             </div>

@@ -62,6 +62,7 @@
     </div>
     <div class="col-md-12 text-muted text-center mt-5">
     <p>Copyright © DragonBreath inc., 2015-2020</p>
+        <a href="//free-kassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/17.png" title="Приём оплаты на сайте картами"></a>
     </div>
   </div>
 </footer>
