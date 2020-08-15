@@ -20,13 +20,15 @@
                         <div class="dragon-hack d-flex hvr-grow">
                             <div class="m-auto pt-3 pb-3">
                                 <img src="{{ asset('storage/' . $cheat->image) }}" class="img-fluid" alt="{{ $cheat->name }}">
-                                <h2 class="">{{ $cheat->name }}</h2>
+                                <h2 @if ($cheat->color) style="color: {{ $cheat->color }}" @endif>{{ $cheat->name }}</h2>
                                 <ul>
                                     @foreach($cheat->features as $feature)
                                         <li><i class="{{ $feature->icon }} mr-2"></i>{{ $feature->name }}</li>
                                     @endforeach
                                 </ul>
-
+                                @if ($cheat->status)
+                                    <span>{{ $cheat->status }}</span>
+                                @endif
                             </div>
                         </div>
                     </a>
