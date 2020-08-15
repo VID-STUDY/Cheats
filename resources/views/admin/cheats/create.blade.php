@@ -2,6 +2,10 @@
 
 @section('title', 'Добавить чит')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
+@endsection
+
 @section('content')
     <h2 class="content-heading">Читы</h2>
     <form action="{{ route('admin.cheats.store') }}" method="post" enctype="multipart/form-data">
@@ -152,6 +156,24 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-ms-12 col-md-6">
+                    <div class="form-group">
+                        <div class="form-material floating">
+                            <input type="text" class="form-control js-colorpicker" name="color" id="color">
+                            <label for="color">Цвет текста</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ms-12 col-md-6">
+                    <div class="form-group">
+                        <div class="form-material floating">
+                            <input type="text" name="status" id="status" class="form-control">
+                            <label for="status">Статус</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group @error('game_id') is-invalid @enderror">
                         <div class="form-material floating">
@@ -233,6 +255,14 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <div class="form-material floating">
+                        <input type="text" name="durations[{0}][payment_link]" id="duration{0}payment_link" class="form-control">
+                        <label for="duration{0}payment_link">Ссылка на оплату</label>
+                    </div>
+                </div>
+            </div>
         </div>
     </template>
     <div id="duration-counter" class="d-none">0</div>
@@ -270,4 +300,8 @@
 
 @section('js')
     <script src="{{ asset('assets/js/cheatForm.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script>
+        Codebase.helper('colorpicker');
+    </script>
 @endsection

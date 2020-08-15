@@ -236,6 +236,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <div class="form-material floating">
+                                    <input type="text" name="durations[{{ $key }}][payment_link]" id="duration{{ $key }}payment_link" class="form-control">
+                                    <label for="duration{{ $key }}payment_link">Ссылка на оплату</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -306,6 +314,14 @@
                                    class="form-control"><label
                                 for="duration{0}price">Цена</label>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <div class="form-material floating">
+                        <input type="text" name="durations[{0}][payment_link]" id="duration{0}payment_link" class="form-control">
+                        <label for="duration{0}payment_link">Ссылка на оплату</label>
                     </div>
                 </div>
             </div>
