@@ -127,28 +127,25 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="post" action="{{ route('cheats.buy', $cheat->slug) }}">
-                                @csrf
-                                <div class="modal-body">
-                                    <label for="customRange2" class="text-center d-block">Проведите ползунок влево или
-                                        вправо и выберите нужный тариф</label>
-                                    <input type="range" name="subscription" id="customRange2" class="custom-range"
-                                           min="1"
-                                           max="{{ $cheat->durations()->count() }}" value="1">
-                                    <div class="ranges-dragon mb-5">
-                                        @foreach($cheat->durations as $duration)
-                                            <span>{{ $duration->getPeriod() }}</span>
-                                        @endforeach
-                                    </div>
+                            <div class="modal-body">
+                                <label for="customRange2" class="text-center d-block">Проведите ползунок влево или
+                                    вправо и выберите нужный тариф</label>
+                                <input type="range" name="subscription" id="customRange2" class="custom-range"
+                                       min="1"
+                                       max="{{ $cheat->durations()->count() }}" value="1">
+                                <div class="ranges-dragon mb-5">
+                                    @foreach($cheat->durations as $duration)
+                                        <span>{{ $duration->getPeriod() }}</span>
+                                    @endforeach
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал
-                                    </button>
-                                    <button type="submit" id="payButton" class="btn btn-primary">Перейти к оплате
-                                        ({{ number_format($cheat->durations[0]->price, 0, '.', ' ') }} руб.)
-                                    </button>
-                                </div>
-                            </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Я передумал
+                                </button>
+                                <a href="{{ $cheat->durations[0]->payment_link }}" type="submit" id="payButton" class="btn btn-primary">Перейти к оплате
+                                    ({{ number_format($cheat->durations[0]->price, 0, '.', ' ') }} руб.)
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,6 +154,7 @@
         <div class="d-none">
             @foreach($cheat->durations as $key => $duration)
                 <span id="durationPrice{{ $key }}">{{ number_format($duration->price, 0, '.', ' ') }}</span>
+                <span id="durationLink{{ $key }}">{{ $duration->payment_link }}</span>
             @endforeach
         </div>
     @endauth
@@ -285,31 +283,7 @@
 
 
     </script>
-    <script type="7c970f9dee8bf3fd5daaf159-text/javascript">
-        /* Формирование ссылки при выборе чита*/
 
-		 $('#yt-video').click(function() {
-            console.log(":asd");
-        });
-
-        function carouselChanging() {
-            if (!flag) {
-                $('.carousel').carousel('pause');
-                flag = true;
-                $('.carousel-control-prev').setAttribute("hidden", "");
-                $('.carousel-control-next').setAttribute("hidden", "");
-                console.log("Carousel is locked");
-            } else {
-                $('.carousel').carousel();
-                flag = false;
-                console.log("Carousel is unlocked");
-            }
-        }
-
-
-
-
-    </script>
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
             data-cf-settings="7c970f9dee8bf3fd5daaf159-|49" defer=""></script>
 @endsection
