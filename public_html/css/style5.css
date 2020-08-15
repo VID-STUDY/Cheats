@@ -291,12 +291,10 @@ footer a:hover {
  box-shadow:0 5px 14px 6px #2472bb1f
 }
 .dragon-hack h2 {
- background:-webkit-linear-gradient(85deg,#4d5975,#4286f4);
+ color: #4286f4;
  font-weight:700;
  line-height:1.5;
  text-transform:uppercase;
- -webkit-background-clip:text;
- -webkit-text-fill-color:transparent
 }
 .phoenix-hack {
  background:#fff;
