@@ -106,9 +106,13 @@ class CheatsController extends Controller
             'serialtime' => $duration->duration,
             'cheat_id' => $cheat->id
         ]);
+        $time = ''.$duration->duration;
+        if ($duration->duration < 10)
+            $time = '0'.$time;
+        $time = "$time:00:00";
         DB::connection('cheats_db')
-            ->insert('INSERT INTO license_keys (license_key, cheat, time, seller) VALUES (?, ?, ?, ?)',
-                [$key, $cheat->name, $duration->duration, $user->email]);
+            ->insert('INSERT INTO license_keys (license_key, cheat, time, seller, status, banned) VALUES (?, ?, ?, ?, ?, ?)',
+                [$key, $cheat->name, $time, $user->email, 0, 0]);
         return response()->download($zipPath);
     }
 }
