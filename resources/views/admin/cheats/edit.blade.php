@@ -261,7 +261,7 @@
                         <div class="row">
                             <div class="col-sm-12 form-group">
                                 <div class="form-material floating">
-                                    <input type="text" name="durations[{{ $key }}][payment_link]" id="duration{{ $key }}payment_link" class="form-control">
+                                    <input type="text" name="durations[{{ $key }}][payment_link]" id="duration{{ $key }}payment_link" class="form-control" value="{{ $duration->payment_link }}">
                                     <label for="duration{{ $key }}payment_link">Ссылка на оплату</label>
                                 </div>
                             </div>
