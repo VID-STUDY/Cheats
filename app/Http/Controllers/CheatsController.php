@@ -6,6 +6,7 @@ use App\Cheat;
 use App\Game;
 use App\Repositories\Interfaces\CheatRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -105,6 +106,9 @@ class CheatsController extends Controller
             'serialtime' => $duration->duration,
             'cheat_id' => $cheat->id
         ]);
+        DB::connection('cheats_db')
+            ->insert('INSERT INTO license_keys (license_key, cheat, time, seller) VALUES (?, ?, ?, ?)',
+                [$key, $cheat->name, $duration->duration, $user->email]);
         return response()->download($zipPath);
     }
 }
