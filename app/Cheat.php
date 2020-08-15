@@ -13,7 +13,7 @@ class Cheat extends Model
     protected $fillable = [
         'name', 'type', 'description', 'release_date', 'manufacturer',
         'functional', 'system_requirements', 'additional_info',
-        'color', 'status', 'payment_link',
+        'color', 'status',
         'sort_order', 'game_id'
     ];
 
