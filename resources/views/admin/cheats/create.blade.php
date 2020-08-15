@@ -159,7 +159,7 @@
                 <div class="col-ms-12 col-md-6">
                     <div class="form-group">
                         <div class="form-material floating">
-                            <input type="text" class="form-control js-colorpicker" name="color" id="color">
+                            <input type="text" class="form-control js-colorpicker" name="color" id="color" value="{{ old('color') }}">
                             <label for="color">Цвет текста</label>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                 <div class="col-ms-12 col-md-6">
                     <div class="form-group">
                         <div class="form-material floating">
-                            <input type="text" name="status" id="status" class="form-control">
+                            <input type="text" name="status" id="status" class="form-control" value="{{ old('status') }}">
                             <label for="status">Статус</label>
                         </div>
                     </div>

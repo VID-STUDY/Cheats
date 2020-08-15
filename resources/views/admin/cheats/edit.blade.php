@@ -169,6 +169,24 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-ms-12 col-md-6">
+                    <div class="form-group">
+                        <div class="form-material floating">
+                            <input type="text" class="form-control js-colorpicker" name="color" id="color" value="{{ $cheat->color }}">
+                            <label for="color">Цвет текста</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-ms-12 col-md-6">
+                    <div class="form-group">
+                        <div class="form-material floating">
+                            <input type="text" name="status" id="status" class="form-control" value="{{ $cheat->status }}">
+                            <label for="status">Статус</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group @error('game_id') is-invalid @enderror">
                         <div class="form-material floating">
