@@ -2,6 +2,10 @@
 
 @section('title', "Чит $cheat->name")
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('assets/js/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
+@endsection
+
 @section('content')
     <h2 class="content-heading">Читы</h2>
     <form action="{{ route('admin.cheats.update', $cheat->slug) }}" method="post" enctype="multipart/form-data">
@@ -380,4 +384,8 @@
 
 @section('js')
     <script src="{{ asset('assets/js/cheatForm.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script>
+        Codebase.helper('colorpicker');
+    </script>
 @endsection
