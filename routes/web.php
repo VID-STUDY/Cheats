@@ -60,3 +60,7 @@ Route::post('/account/settings', 'AccountController@storeSettings')->name('accou
 Route::get('/account', 'AccountController@index')->name('account');
 
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

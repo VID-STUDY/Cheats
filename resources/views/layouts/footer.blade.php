@@ -29,7 +29,7 @@
 
 </style> -->
 <footer class="pb-1 pt-4">
-  <div class="container">
+  <div class="container text-center">
     <div class="row">
       <div class="col-md-4">
         <h5>Навигация</h5>
@@ -42,27 +42,29 @@
       <div class="col-md-4">
         <h5>Полезные ссылки</h5>
           <ul class="list-group text-muted pl-4 pr-4">
-          <li><a href="https://www.youtube.com/channel/UCTuK88GGBeNJKT5SMobAuzA" target="_blank" class="hvr-icon-pulse" title=""><i class="fab fa-youtube mr-2"></i>YouTube</a></li>
-          <li><a href="https://vk.com/app5701477_197893311" target="_blank" class="hvr-icon-pulse" title=""><i class="fas fa-file-signature mr-2"></i>Тест на звание</a></li>
-          <li><a href="{{ route('cooperation') }}" class="hvr-icon-pulse" title="Сотрудничество"><i class="far fa-handshake mr-2"></i>Сотрудничество</a></li>
-          <li><a href="https://www.elitepvpers.com/" class="hvr-icon-pulse" title="Elitepvpers"><i class="far fa-handshake mr-2"></i>Elitepvpers</a></li>
+
+          <li><a href="https://discord.gg/GtHkHjg" class="hvr-icon-pulse" title="Сотрудничество"><i class="far fa-handshake mr-2"></i>Дискорд</a></li>
+
         </ul>
       </div>
       <div class="col-md-4">
-        <h5>Последние статьи</h5>
+        <h5>Разделы сайта</h5>
         <ul class="list-group text-muted pl-4 pr-4">
-            @foreach($lastCheats as $lastCheat)
+            <!-- @foreach($lastCheats as $lastCheat)
                 @if ($lastCheat->type !== 'spoofer' and !$lastCheat->game)
                     @continue
                 @endif
                 <li><a href="@if ($lastCheat->type == 'spoofer') {{ route('cheats.spoofer', $lastCheat->slug) }} @else {{ route('cheats.cheat', ['game' => $lastCheat->game->slug, 'cheat' => $lastCheat->slug]) }} @endif" class="hvr-icon-pulse" title="{{ $lastCheat->name }}"><i class="fas fa-angle-right hvr-icon mr-2"></i>{{ $lastCheat->name }}</a></li>
-            @endforeach
+            @endforeach -->
+            <li><a href="{{ route('home') }}" class="hvr-icon-pulse"><i class="fas fa-angle-right hvr-icon mr-2"></i>Главная</a></li>
+            <li><a href="{{ route('cheats.games') }}" class="hvr-icon-pulse"><i class="fas fa-angle-right hvr-icon mr-2"></i>Читы</a></li>
+            <li><a href="{{ route('cheats.spoofers') }}" class="hvr-icon-pulse"><i class="fas fa-angle-right hvr-icon mr-2"></i>Спуфер</a></li>
         </ul>
       </div>
     </div>
     <div class="col-md-12 text-muted text-center mt-5">
     <p>Copyright © DragonBreath inc., 2015-2020</p>
-        <a href="//free-kassa.ru/"><img src="//www.free-kassa.ru/img/fk_btn/17.png" title="Приём оплаты на сайте картами"></a>
+
     </div>
   </div>
 </footer>
