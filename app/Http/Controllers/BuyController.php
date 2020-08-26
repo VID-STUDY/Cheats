@@ -14,6 +14,14 @@ class BuyController extends Controller
     {
         $productId = $request->get('id');
         $inv = $request->get('inv');
+        $sign = $request->get('sign');
+        $checksum = md5($productId . ':' . $inv . ':' . env('DIGISELLER_PASSWORD'));
+        if ($sign != $checksum)
+            return response()->json([
+                'id' => $productId,
+                'inv' => $inv,
+                'error' => 'Неверная контрольная сумма'
+            ]);
         /** @var SubscriptionDuration $duration */
         $duration = SubscriptionDuration::where('digiseller_product_id', $productId)->first();
         if (!$duration)
