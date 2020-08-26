@@ -20,15 +20,15 @@ class BuyController extends Controller
             return response()->json([
                 'id' => $productId,
                 'inv' => $inv,
-                'error' => 'Неверная контрольная сумма'
-            ]);
+                'error' => 'Wrong checksum'
+            ], 400);
         /** @var SubscriptionDuration $duration */
         $duration = SubscriptionDuration::where('digiseller_product_id', $productId)->first();
         if (!$duration)
             return response()->json([
                 'id' => $productId,
                 'inv' => $inv,
-                'error' => 'Такой товар не найден'
+                'error' => 'Product not found'
             ], 404);
         /** @var array $queryOptions */
         $queryOptions = $request->get('options');
@@ -38,8 +38,8 @@ class BuyController extends Controller
             return response()->json([
                 'id' => $productId,
                 'inv' => $inv,
-                'error' => 'Такой пользователь не зарегистрирован'
-            ]);
+                'error' => 'User not found'
+            ], 404);
         $cheat = $duration->cheat;
         $key = bin2hex(random_bytes(32));
         $fileToken = bin2hex(random_bytes(5));
