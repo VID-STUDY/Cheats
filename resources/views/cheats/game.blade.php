@@ -13,7 +13,7 @@
         </nav>
         <h1 class="text-center mt-5">Читы {{ $game->name }}</h1>
         <p class="text-center text-muted mb-5">{{ $game->short_description }}</p>
-        <div class="row cheat-links pt-5 pb-4">
+        <div class="row cheat-links pt-5 pb-4 d-flex justify-content-center">
             @foreach($cheats as $cheat)
                 <div class="col-md-4 animated flipInX">
                     <a href="{{ route('cheats.cheat', ['game' => $game->slug, 'cheat' => $cheat->slug]) }}" title="{{ $cheat->name }}">

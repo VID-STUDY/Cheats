@@ -9,6 +9,14 @@
 @section('content')
     <main class="p-1 dragon-bg" style="background:url('{{ asset('img/dragonhack-bg.webp') }}')">
         <div class="container text-center">
+          <nav aria-label="breadcrumb" class="mt-3">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{{ route('home') }}" title="Главная">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="{{ route('cheats.game', $game->slug) }}"
+                                                 title="{{ $game->name }}">{{ $game->name }}</a></li>
+                  <li class="breadcrumb-item active"><a href="#">{{ $cheat->name }}</a></li>
+              </ol>
+          </nav>
             <h1 class="dh-h1 mt-5">{{ $cheat->name }}</h1>
             <div class="text animated shake"></div>
             <div class="row mt-5">
@@ -105,14 +113,7 @@
                     </div>
                 </div>
             </div>
-            <nav aria-label="breadcrumb" class="mt-3">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}" title="Главная">Главная</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('cheats.game', $game->slug) }}"
-                                                   title="{{ $game->name }}">{{ $game->name }}</a></li>
-                    <li class="breadcrumb-item active"><a href="#">{{ $cheat->name }}</a></li>
-                </ol>
-            </nav>
+            
         </div>
     </main>
     @auth

@@ -12,13 +12,12 @@
 <h1 class="text-center mt-4 mb-4">Контакты</h1>
 <h2 class="text-center">Данные персонала</h2>
 <hr>
-<p class="contact_item text-muted"><i class="fas fa-user-circle"></i> Кирилл Авсиевич | <i class="fab fa-vk"></i> <a href="https://vk.com/id157687006" target="_blank">vk.com/id157687006</a> | <i class="fas fa-male"></i> Продавец и тех. поддержка</p>
+<p class="contact_item text-muted"><i class="fas fa-user-circle"></i> Leax3201#3201 | <i class="fas fa-male"></i> Продавец</p>
+<p class="contact_item text-muted"><i class="fas fa-user-circle"></i> MrFalope6870#9999 | <i class="fas fa-male"></i> Кодер</p>
 <h2 class="text-center mt-3">Данные проекта</h2>
 <hr>
-<p class="contact_item text-muted"><i class="fas fa-globe"></i> Основной сайт - <a href="index.html" target="_blank">wh-satano.ru</a> | <i class="fab fa-vk"></i> Группа ВКонтакте: <a href="https://vk.com/satanosoft" target="_blank">vk.com/satanosoft</a></p>
-<p class="contact_item text-muted"><i class="fab fa-vk"></i> Группа по Apex, PUBG и Warface - <a href="https://vk.com/club162233746" target="_blank">vk.com/club162233746</a> | <i class="fab fa-vk"></i> Резервная группа: <a href="https://vk.com/satano_shop" target="_blank">vk.com/satano_shop</a></p>
-<p class="contact_item text-muted"><i class="far fa-envelope"></i> Почта для обратной связи - <a href="contacts.html" target="_blank"><span class="__cf_email__" data-cfemail="452421282c2b05322d68362431242b2a6b3730">[email&#160;protected]</span></a></p>
-<p class="contact_item text-muted">Наш дискорд - <a href="https://discord.gg/zZawvB4" target="_blank"><i class="fab fa-discord fa-lg"></i></a></p>
+<p class="contact_item text-muted"><i class="fas fa-globe"></i> Основной сайт - <a href="{{ route('home') }}" target="_blank">dragoncheats.ru</a></p>
+<p class="contact_item text-muted">Наш дискорд - <a href="https://discord.gg/GtHkHjg" target="_blank"><i class="fab fa-discord fa-lg"></i></a></p>
 <!-- <h2 class="text-center mt-3">Немного о проекте</h2>
 <div class="content_block">
 <p class="text-muted">Проект <b>WH-SATANO</b> был создан в 2015 году. Именно в этот год на рынке приватного софта была нехватка уникального продукта, который мог бы решать многие проблемы игроков CS:GO. Например, чтобы поиграть с читом в лицензионную версию CS:GO (Steam), Вы обязаны были подвергнуть свой аккаунт риску, связанному с высоким на тот момент уровнем защиты античита от компании <b>VALVE</b>. Получить бан, используя софт, лежащий в открытом доступе в сети, было достаточно легко, и именно поэтому мы поставили перед собой задачу - <b>сделать самый надёжный приватный чит для CS:GO</b>. Спустя несколько месяцев работы у нас это получилось и первая версия софта вышла в продажу. В дальнейшем ассортимент приватного софта расширился и от имени <b>WH-SATANO</b> были выпущены ещё несколько читов для таких игр, как <b>RUST</b>, <b>PUBG</b> и <b>Apex</b>. На текущий момент в ассортименте имеются:
@@ -37,7 +36,7 @@
 </div>
 </section>
 
-<sc
+
 
 <script type="e8b2577ea77d1b760cd96c15-text/javascript">
     (function(d, w, c) {

@@ -62,3 +62,7 @@ Route::post('buy/digiseller', 'BuyController@digiseller');
 Route::get('/account', 'AccountController@index')->name('account');
 
 Auth::routes();
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
