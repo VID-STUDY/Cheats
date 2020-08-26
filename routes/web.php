@@ -49,6 +49,8 @@ Route::get('/spoofer', function () {
 Route::get('/account/settings', 'AccountController@settings')->name('account.settings');
 
 Route::post('/account/settings', 'AccountController@storeSettings')->name('account.settings.save');
+
+Route::post('buy/digiseller', 'BuyController@digiseller');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
