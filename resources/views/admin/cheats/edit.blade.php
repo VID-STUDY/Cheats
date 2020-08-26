@@ -266,6 +266,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <div class="form-material floating">
+                                    <input type="text" name="durations[{{ $key }}][digiseller_product_id]" id="duration{{ $key }}digiseller_product_id" class="form-control" value="{{ $duration->digiseller_product_id }}">
+                                    <label for="duration{{ $key }}digiseller_product_id">ID товара на Digiseller</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

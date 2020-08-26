@@ -263,6 +263,14 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <div class="form-material floating">
+                        <input type="text" name="durations[{0}][digiseller_product_id]" id="duration{0}digiseller_product_id" class="form-control">
+                        <label for="duration{0}digiseller_product_id">ID товара на Digiseller</label>
+                    </div>
+                </div>
+            </div>
         </div>
     </template>
     <div id="duration-counter" class="d-none">0</div>

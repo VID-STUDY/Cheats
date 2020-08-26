@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubscriptionDuration extends Model
 {
     protected $fillable = [
-        'duration', 'price', 'payment_link'
+        'duration', 'price', 'payment_link', 'digiseller_product_id'
     ];
 
     /**
