@@ -48,6 +48,7 @@
                                     <th scope="col">Покупка</th>
                                     <th scope="col">Оставшиеся время действия</th>
                                     <th scope="col">Действителен до</th>
+                                    <th scope="col">Файл</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -57,6 +58,7 @@
                                         <td>{{ $subscription->cheat->name }}</td>
                                         <td>{{ $subscription->remainingTime() }} часов</td>
                                         <td>{{ $subscription->validUntil()->format('d.m.Y h:i:s') }}</td>
+                                        <td><a href="{{ asset('storage/' . $subscription->filename) }}" class="btn btn-default">Скачать</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
