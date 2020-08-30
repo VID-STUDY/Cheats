@@ -53,6 +53,7 @@ class BuyController extends Controller
         $user->subscriptions()->create([
             'serialnum' => $key,
             'serialtime' => $duration->duration,
+            'filename' => $filenameWithToken,
             'cheat_id' => $cheat->id
         ]);
         $time = ''.$duration->duration;
@@ -62,10 +63,12 @@ class BuyController extends Controller
         DB::connection('cheats_db')
             ->insert('INSERT INTO license_keys (license_key, cheat, time, seller, status, banned) VALUES (?, ?, ?, ?, ?, ?)',
                 [$key, $cheat->name, $time, $user->email, 0, 0]);
+        $subscriptions = $user->subscriptions()->orderBy('serialstatus', 'desc')->get();
+        $html = view('pages.account.index', compact('user', 'subscriptions'))->render();
         return response()->json([
             'id' => $productId,
             'inv' => $inv,
-            'goods' => ''
+            'goods' => $html
         ]);
     }
 }
