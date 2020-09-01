@@ -46,8 +46,11 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Покупка</th>
+                                    <th scope="col">Ссылка на скачивание</th>
+                                    <th scope="col">Уникальный ключ</th>
                                     <th scope="col">Оставшиеся время действия</th>
                                     <th scope="col">Действителен до</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -55,6 +58,8 @@
                                     <tr>
                                         <td>{{ $subscription->id }}</td>
                                         <td>{{ $subscription->cheat->name }}</td>
+                                        <td>Ссылка на скачивание</td>
+                                        <td>Уникальный ключ</td>
                                         <td>{{ $subscription->remainingTime() }} часов</td>
                                         <td>{{ $subscription->validUntil()->format('d.m.Y h:i:s') }}</td>
                                     </tr>
