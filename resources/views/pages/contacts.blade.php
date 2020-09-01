@@ -8,7 +8,7 @@
 
 @section('content')
 <section id="contacts">
-<div class="container">
+<div class="container" style="padding-bottom: 15%;">
 <h1 class="text-center mt-4 mb-4">Контакты</h1>
 <h2 class="text-center">Данные персонала</h2>
 <hr>

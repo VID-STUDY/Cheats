@@ -50,7 +50,11 @@
                                     <th scope="col">Уникальный ключ</th>
                                     <th scope="col">Оставшиеся время действия</th>
                                     <th scope="col">Действителен до</th>
+<<<<<<< HEAD
 
+=======
+                                    <th scope="col">Файл</th>
+>>>>>>> 92ad393f4f230ef950119d63b1ee916fd19897e0
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -62,6 +66,7 @@
                                         <td>Уникальный ключ</td>
                                         <td>{{ $subscription->remainingTime() }} часов</td>
                                         <td>{{ $subscription->validUntil()->format('d.m.Y h:i:s') }}</td>
+                                        <td><a href="{{ asset('storage/' . $subscription->filename) }}" class="btn btn-default">Скачать</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

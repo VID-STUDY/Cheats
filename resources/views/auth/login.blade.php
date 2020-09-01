@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="container m-auto pl-5 pt-5 pb-5">
+<div class="container m-auto pl-5 pt-5 pb-5" style="padding-bottom: 15%;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

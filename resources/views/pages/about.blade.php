@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-<section id="about">
-<div class="container row m-auto pl-5 pt-5 pb-5">
+<section id="about1">
+<div class="container row m-auto pl-5 pt-5" style="padding-bottom: 15%;">
 <h1>Информация о проекте <font color="#D85E53">DragonBreath</font></h1>
 <p>
 Мы небольшой коллектив с наполеоновскими амбициями и стремлением к совершенствованию производимых нами товаров и услуг. В их число входят: фирменный спуфер, читы (скоро) на Apex: Legends, RaibowSixSiege, CS:GO, PUBG, Paladins. Также ведётся активная разработка макросов.
