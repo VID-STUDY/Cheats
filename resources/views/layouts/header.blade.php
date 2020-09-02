@@ -1,8 +1,8 @@
 <header class="container py-3">
   <div class="row flex-nowrap justify-content-between align-items-center">
     <div class="col-4 pt-1 socials">
-      <a class="text-muted mr-2 hvr-push" href="https://vk.com/satanosoft" target="_blank" title="Мы ВКонтакте"><i class="fab fa-vk fa-lg"></i></a>
-      <a class="text-muted hvr-push" href="https://discord.gg/zZawvB4" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
+      <!-- <a class="text-muted mr-2 hvr-push" href="https://vk.com/satanosoft" target="_blank" title="Мы ВКонтакте"><i class="fab fa-vk fa-lg"></i></a> -->
+      <a class="text-muted hvr-push" href="https://discord.gg/GtHkHjg" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
     </div>
     <div class="col-4 text-center logo-text">
       <a class="header-logo text-theme" title="Главная страница WH-SATANO" href="{{ route('home') }}">DragonBreath</a>
