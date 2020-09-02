@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="container m-auto pl-5 pt-5 pb-5">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="padding-bottom: 15%;">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
