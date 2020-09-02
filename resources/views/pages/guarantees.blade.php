@@ -47,41 +47,4 @@
 </section>
 
 
-<script type="f8052d2264a1d6a7e2e12f06-text/javascript">
-    (function(d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter39582760 = new Ya.Metrika2({
-                    id: 39582760,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
-                });
-            } catch (e) {}
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function() {
-                n.parentNode.insertBefore(s, n);
-            };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks2");
-
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/39582760" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" type="f8052d2264a1d6a7e2e12f06-text/javascript"></script>
-<script src="js/bootstrap.bundle.min.js" type="f8052d2264a1d6a7e2e12f06-text/javascript"></script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="f8052d2264a1d6a7e2e12f06-|49" defer=""></script>
 @endsection
