@@ -62,8 +62,12 @@
                                 <b class="mr-2">Разработчик:</b>{{ $cheat->manufacturer }}<br/>
                             @endif
                         </p>
+                        @if(Auth::check())
                         <a type="button" @auth data-toggle="modal" data-target="#buyModal"
                            @elseauth href="{{ route('login') }}" @endauth class="btn btn-lg btn-buy-cheat">Купить</a>
+                        @else
+                          <a type="button" class="btn btn-lg btn-buy-cheat" href="{{ route('login') }}">Авторизация</a>
+                        @endif
                     </div>
                 </div>
             </div>
