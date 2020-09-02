@@ -13,7 +13,7 @@
   <h2 class="text-center">Данные персонала</h2>
   <hr>
   <p class="contact_item text-muted"><i class="fas fa-user-circle"></i> Leax3201#3201 | <i class="fas fa-male"></i> Продавец</p>
-  <p class="contact_item text-muted"><i class="fas fa-user-circle"></i> MrFalope6870#9999 | <i class="fas fa-male"></i> Кодер</p>
+  <p class="contact_item text-muted"><i class="fas fa-user-circle"></i> UnDERLY#4633  | <i class="fas fa-male"></i> Кодер</p>
   <h2 class="text-center mt-3">Данные проекта</h2>
   <hr>
   <p class="contact_item text-muted"><i class="fas fa-globe"></i> Основной сайт - <a href="{{ route('home') }}" target="_blank">dragoncheats.ru</a></p>
